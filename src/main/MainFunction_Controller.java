@@ -13,9 +13,14 @@ import yegin.shelf_life.shelfLifeController;
 
 public class MainFunction_Controller implements Initializable {
 	Parent root;
+	Parent newRoot;
 
 	public void setRoot(Parent root) {
 		this.root = root;
+
+	}
+	public void setRoot2(Parent root) {
+		this.newRoot = root;
 
 	}
 
@@ -23,26 +28,28 @@ public class MainFunction_Controller implements Initializable {
 		System.out.println("냉장고 버튼 눌림");
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("coldStorage_function.fxml"));
-		Parent newRoot = null;
+		newRoot = null;
 		Scene sc = null;
 		try {
-			newRoot = loader.load();
+			//newRoot = loader.load();
+			this.newRoot = loader.load();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sc = new Scene(newRoot);
-
 		Stage stage = (Stage) root.getScene().getWindow();
-		// stage에서 null이 나옴
-		stage.setScene(sc);// 여기서 오류남
+
+		MainFunction_Controller mc = loader.getController();//페이지가 또 만들어짐
+		mc.setRoot2(newRoot);
+		stage.setScene(sc);
 		stage.show();
 	}
 
 	public void shelfLife() {
 		System.out.println("유통기한버튼");
 		shelfLifeController sc = new shelfLifeController();
-		sc.setRoot(root);
+		sc.setRoot(newRoot);
 		sc.shelfLifeList();
 
 	}
