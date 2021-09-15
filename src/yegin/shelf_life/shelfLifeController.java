@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import main.MainFunction_Controller;
 
 public class shelfLifeController {
+	//클릭시 해당 리스트로 넘어가기?
 	Parent root;
 	Parent newRoot;
 	ListView<String> fxListview;
@@ -41,6 +42,8 @@ public class shelfLifeController {
 			e.printStackTrace();
 		}
 		sc = new Scene(newRoot);
+		sc.getStylesheets().add(getClass().getResource("../css/shelfLife.css").toString());
+		
 		Stage stage = (Stage) root.getScene().getWindow();
 		shelfLifeController slc = loader.getController();// 페이지가 또 만들어짐
 		slc.setRoot2(newRoot);

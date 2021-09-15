@@ -9,6 +9,7 @@
    <children>
       <Button layoutX="84.0" layoutY="273.0" mnemonicParsing="false" onAction="#login" text="로그인" />
       <Button layoutX="202.0" layoutY="273.0" mnemonicParsing="false" text="회원가입" />
+      
       <Label layoutX="80.0" layoutY="182.0" text="나의 냉장고(대충 이름)">
          <font>
             <Font size="18.0" />

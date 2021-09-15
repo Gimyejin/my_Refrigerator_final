@@ -8,12 +8,12 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.shelf_life.shelfLifeController">
    <children>
-      <ListView fx:id="viewList" layoutX="53.0" layoutY="101.0" prefHeight="368.0" prefWidth="245.0" />
-      <Label layoutX="118.0" layoutY="49.0" text="유통기한 목록">
+      <ListView fx:id="viewList" layoutX="64.0" layoutY="204.0" prefHeight="272.0" prefWidth="224.0" />
+      <Label fx:id="list" layoutX="118.0" layoutY="49.0" text="유통기한 목록">
          <font>
-            <Font size="18.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="258.0" layoutY="477.0" mnemonicParsing="false" text="수정" />
+      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="72.0" text="수정" />
    </children>
 </AnchorPane>
