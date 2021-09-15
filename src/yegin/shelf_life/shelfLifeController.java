@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
 
@@ -32,7 +33,13 @@ public class shelfLifeController {
 
 	public void shelfLifeList() {
 		System.out.println("유통기한 페이지로 넘어옴");
+		
+		System.setProperty("prism.lcdtext", "false");
 
+		Font.loadFont(getClass().getResourceAsStream("/resources/Arial_Black.ttf"), 10);
+		Font.loadFont(getClass().getResourceAsStream("/resources/Arial_Narrow.ttf"), 10);
+////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("shelfLife.fxml"));
 		Parent newRoot = null;
 		Scene sc = null;
@@ -42,7 +49,7 @@ public class shelfLifeController {
 			e.printStackTrace();
 		}
 		sc = new Scene(newRoot);
-		sc.getStylesheets().add(getClass().getResource("../css/shelfLife.css").toString());
+		sc.getStylesheets().add(getClass().getResource("../css/design.css").toString());
 		
 		Stage stage = (Stage) root.getScene().getWindow();
 		shelfLifeController slc = loader.getController();// 페이지가 또 만들어짐
@@ -60,7 +67,10 @@ public class shelfLifeController {
 			listView.add("갤럭시S" + i);
 			System.out.println(listView);
 		}
-		System.out.println(fxListview);// fxListview가 null
-		fxListview.setItems(listView);// 여기 에러
+		System.out.println(fxListview);
+		fxListview.setItems(listView);
+	}
+	public void  back() {
+		System.out.println("뒤로 버튼");
 	}
 }

@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import yegin.alert.AlertController;
 import yegin.shelf_life.shelfLifeController;
 
 public class MainFunction_Controller implements Initializable {
@@ -17,11 +18,17 @@ public class MainFunction_Controller implements Initializable {
 
 	public void setRoot(Parent root) {
 		this.root = root;
-
 	}
+	
+	public void alert() {
+		System.out.println("알람");
+		AlertController ac = new AlertController();
+		ac.setRoot(root);
+		ac.alert();
+	}
+	
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
-
 	}
 
 	public void cold_Storage() {
@@ -49,13 +56,10 @@ public class MainFunction_Controller implements Initializable {
 	public void shelfLife() {
 		System.out.println("유통기한버튼");
 		shelfLifeController sc = new shelfLifeController();
+		System.out.println(newRoot);
 		sc.setRoot(newRoot);
 		sc.shelfLifeList();
 
-	}
-
-	public void alert() {
-		System.out.println("알람");
 	}
 
 	@Override
