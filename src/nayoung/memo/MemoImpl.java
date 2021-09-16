@@ -2,7 +2,7 @@ package nayoung.memo;
 
 import javafx.scene.Parent;
 
-public class MemoListImpl implements MemoList{
+public class MemoImpl implements Memo{
 	Parent root;
 	@Override
 	public void memoProc() {
@@ -14,5 +14,6 @@ public class MemoListImpl implements MemoList{
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
+
 	
 }

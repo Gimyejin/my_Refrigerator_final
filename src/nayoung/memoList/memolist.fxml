@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="shoppingList" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nayoung.memo.MemoListController">
+<AnchorPane fx:id="shoppingList" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nayoung.memoList.MemoListController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="71.0" text="List">
          <font>
