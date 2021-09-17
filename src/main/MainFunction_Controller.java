@@ -19,16 +19,38 @@ public class MainFunction_Controller implements Initializable {
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
-	
+
+	public void setRoot2(Parent root) {
+		this.newRoot = root;
+	}
+
+	public void frozen_Storage() {
+		System.out.println("냉동고 버튼 눌림");
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("frozenStorage_function.fxml"));
+		newRoot = null;
+		Scene sc = null;
+		try {
+			// newRoot = loader.load();
+			this.newRoot = loader.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		sc = new Scene(newRoot);
+		Stage stage = (Stage) root.getScene().getWindow();
+
+		MainFunction_Controller mc = loader.getController();// 페이지가 또 만들어짐
+		mc.setRoot2(newRoot);
+		stage.setScene(sc);
+		stage.show();
+	}
+
 	public void alert() {
 		System.out.println("알람");
 		AlertController ac = new AlertController();
-		ac.setRoot(root);
+		ac.setRoot(newRoot);
 		ac.alert();
-	}
-	
-	public void setRoot2(Parent root) {
-		this.newRoot = root;
 	}
 
 	public void cold_Storage() {
@@ -38,7 +60,7 @@ public class MainFunction_Controller implements Initializable {
 		newRoot = null;
 		Scene sc = null;
 		try {
-			//newRoot = loader.load();
+			// newRoot = loader.load();
 			this.newRoot = loader.load();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -47,7 +69,7 @@ public class MainFunction_Controller implements Initializable {
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
-		MainFunction_Controller mc = loader.getController();//페이지가 또 만들어짐
+		MainFunction_Controller mc = loader.getController();// 페이지가 또 만들어짐
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
 		stage.show();
