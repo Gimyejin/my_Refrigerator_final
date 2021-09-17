@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="nayoung.temp.TempController">
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nayoung.temp.TempController">
    <children>
       <Label layoutX="138.0" layoutY="152.0" text="INTERACTIVE DISPLAY" />
+      <Slider layoutX="233.0" layoutY="54.0" orientation="VERTICAL" prefHeight="81.0" prefWidth="14.0" />
+      <Spinner layoutX="81.0" layoutY="83.0" prefHeight="22.0" prefWidth="91.0" />
+      <Slider layoutX="53.0" layoutY="53.0" orientation="VERTICAL" prefHeight="81.0" prefWidth="14.0" />
+      <Spinner layoutX="259.0" layoutY="84.0" prefHeight="22.0" prefWidth="91.0" />
+      <Label layoutX="99.0" layoutY="25.0" text="냉 장" />
+      <Label layoutX="283.0" layoutY="25.0" text="냉 동" />
    </children>
 </AnchorPane>
