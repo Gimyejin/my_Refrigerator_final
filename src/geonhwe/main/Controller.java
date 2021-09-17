@@ -14,13 +14,13 @@ import javafx.scene.control.Alert.AlertType;
 
 public class Controller implements Initializable{
 	Parent root;
-	public static DBClass db;
+	public static teamproject db;
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		db = new DBClass();
+		db = new teamproject();
 		
 	}
 	public void membership() {

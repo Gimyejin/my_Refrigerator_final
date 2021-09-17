@@ -1,26 +1,30 @@
-package main;
+package geonhwe.member;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import geonhwe.Login.LoginService;
-import geonhwe.Login.LoginServiceImpl;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import geonhwe.common.*;
 import geonhwe.member.*;
 
-public class MainFunction_Controller implements Initializable{
+public class MemberController implements Initializable{
 	Parent root;
-	MemberService ms;
+	MemberServiceImpl ms;
 	public void setRoot(Parent root) {
 		this.root = root;
-		ms.setRoot(root);
-	}
+		}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ms = (MemberService) new MemberServiceImpl();
+		ms = new MemberServiceImpl();
 	}
 	public void membershipProc() {
+		ms.setRoot(root);
 		System.out.println("회원가입 클릭");
 		ms.membershipProc();
 	}
@@ -29,3 +33,7 @@ public class MainFunction_Controller implements Initializable{
 		ms.memberCancle();
 	}
 }
+
+
+
+
