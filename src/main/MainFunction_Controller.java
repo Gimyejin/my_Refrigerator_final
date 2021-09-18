@@ -3,7 +3,8 @@ package main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import geonhwe.member.MemberService;
+import geonhwe.member.MemberServiceImpl;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -15,9 +16,26 @@ import yegin.shelf_life.shelfLifeController;
 public class MainFunction_Controller implements Initializable {
 	Parent root;
 	Parent newRoot;
+	MemberService ms;
 
 	public void setRoot(Parent root) {
 		this.root = root;
+		ms.setRoot(root);
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		ms = (MemberService) new MemberServiceImpl();
+	}
+
+	public void membershipProc() {
+		System.out.println("회원가입 클릭");
+		ms.membershipProc();
+	}
+
+	public void memberCancle() {
+		System.out.println("취소 클릭");
+		ms.memberCancle();
 	}
 
 	public void setRoot2(Parent root) {
@@ -83,11 +101,4 @@ public class MainFunction_Controller implements Initializable {
 		sc.shelfLifeList();
 
 	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

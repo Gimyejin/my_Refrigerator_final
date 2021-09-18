@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
+	<classpathentry kind="lib" path="C:/Users/hwan5/Desktop/스프링 클라우드를 활용한 응용 SW 개발자 양성/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
