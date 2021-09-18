@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class LoginProc {
-	Parent root;
+	Parent root2;
    public void Login() {
       System.out.println("로그인창 열기");
       try {
@@ -19,6 +19,7 @@ public class LoginProc {
          
          LoginController ctl = loader.getController();
          ctl.setRoot(root);
+         ctl.setMainRoot(root2);
          
          primaryStage.setScene(scene);
          primaryStage.show();
@@ -29,7 +30,7 @@ public class LoginProc {
       }
    }
    public void setRoot(Parent root) {
-	   this.root = root;
+	   this.root2 = root;
    }
 
 }

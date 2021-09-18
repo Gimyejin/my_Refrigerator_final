@@ -37,8 +37,8 @@ public class MemberServiceImpl {
 		MemberDTO dto = new MemberDTO();
 
 		dto.setId(id.getText());
-		dto.setName(pwd.getText());
-		dto.setPwd(name.getText());
+		dto.setPwd(pwd.getText());
+		dto.setName(name.getText());
 
 		// = 하나는 저장, == 앞과 뒤가 같은지 확인하는 용도 / 오른쪽의 값을 좌측에 넣겠다.
 

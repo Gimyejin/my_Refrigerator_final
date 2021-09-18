@@ -17,6 +17,7 @@ import main.MainFunction_Controller;
 
 public class LoginServiceImpl implements LoginService {
 	Parent root;
+	Parent mainRoot;
 	teamproject tpj = new teamproject(); 
 	int result = 0;
 	public void setRoot(Parent root) {
@@ -42,14 +43,17 @@ public class LoginServiceImpl implements LoginService {
 			System.out.println("아이디 일치");
 			if(getdto.getPwd().equals(pw.getText()) ) { //equals 서로 비교하여 일치하는지 확인해주는 역할
 				System.out.println("로그인 성공");
+				Stage stage = (Stage)root.getScene().getWindow();
+				stage.close();//로그인 성공시 해당 창 닫음
+				
 				result = 1;
 				System.out.println("메뉴페이지로 넘어감");
 
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("../../main/menu.fxml"));
 				Parent newRoot = null;
 				Scene sc = null;
 				try {
-					newRoot = loader.load();
+					newRoot = loader.load();//여기서 에러
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -57,13 +61,14 @@ public class LoginServiceImpl implements LoginService {
 				sc = new Scene(newRoot);
 
 				// scene만 바꿔치기
-				Stage stage = (Stage) root.getScene().getWindow();
+				Stage stage2 = (Stage) mainRoot.getScene().getWindow();
 				
 				MainFunction_Controller mc=loader.getController();
 				mc.setRoot(newRoot);
 				
-				stage.setScene(sc);
-				stage.show();
+				stage2.setScene(sc);
+				stage2.show();
+				
 			}else {
 				System.out.println("로그인 실패");
 				result = 0;
@@ -75,5 +80,10 @@ public class LoginServiceImpl implements LoginService {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setContentText(mss);
 		alert.show();
+	}
+
+	public void setMainRoot(Parent mainRoot) {
+		this.mainRoot=mainRoot;
+		
 	}
 } 

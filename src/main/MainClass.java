@@ -16,8 +16,8 @@ public class MainClass extends Application {
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 
-		//LoginButton_Controller ctl = loader.getController();
-		//ctl.setRoot(root);
+		LoginButton_Controller ctl = loader.getController();
+		ctl.setRoot(root);
 
 		primaryStage.setScene(scene);
 		primaryStage.show();

@@ -4,14 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-<<<<<<< HEAD
+
 import javafx.fxml.FXMLLoader;
-=======
 import geonhwe.Login.LoginProc;
 import geonhwe.Login.LoginService;
 import geonhwe.Login.LoginServiceImpl;
 import geonhwe.member.MemberProc;
->>>>>>> 4ccacdeb75be3f91b9244213f81d37759141efc3
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
