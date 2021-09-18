@@ -6,16 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.alert.AlertController">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.shelf_life.shelfLifeController">
    <children>
       <ListView fx:id="viewList" layoutX="64.0" layoutY="204.0" prefHeight="272.0" prefWidth="224.0" />
-      <Label fx:id="list" layoutX="136.0" layoutY="59.0" text="알람 목록">
+      <Label fx:id="list" layoutX="119.0" layoutY="59.0" text="유통기한 목록">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false" onAction="#revise" prefHeight="7.0" prefWidth="72.0" text="수정" />
+      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="72.0" text="수정" />
       <Button layoutX="306.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
-      <Button layoutX="75.0" layoutY="127.0" mnemonicParsing="false" onAction="#turnOnOff" prefHeight="7.0" prefWidth="72.0" text="on/off" />
    </children>
 </AnchorPane>
