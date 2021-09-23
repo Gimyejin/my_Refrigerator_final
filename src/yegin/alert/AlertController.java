@@ -25,11 +25,11 @@ public class AlertController implements Initializable {
 	
 	public void setRoot(Parent root) {
 		this.root = root;
-		System.out.println("root:" + root);// 값 잇음
+		System.out.println("root:" + root);// 전페이지 root값임
 	}
 
 	public void setRoot2(Parent newRoot) {
-		this.newRoot = newRoot;
+		this.newRoot = newRoot;//현페이지의 root값임
 		fxListview = (ListView) newRoot.lookup("#viewList");
 		System.out.println("fxListview:" + fxListview);
 		setList();
