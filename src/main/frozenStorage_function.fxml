@@ -9,6 +9,6 @@
    <children>
       <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="냉동기능 페이지입니다(추후삭제)" />
       <Button layoutX="115.0" layoutY="82.0" mnemonicParsing="false" text="장보기 페이지 버튼" />
-      <Button layoutX="127.0" layoutY="142.0" mnemonicParsing="false" text="알림 설정 버튼" />
+      <Button layoutX="127.0" layoutY="142.0" mnemonicParsing="false" onAction="#alert" text="알림 설정 버튼" />
    </children>
 </AnchorPane>
