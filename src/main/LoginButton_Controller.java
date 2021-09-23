@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import yegin.css.Design;
 
 public class LoginButton_Controller implements Initializable {
 	Parent root;
@@ -25,6 +26,10 @@ public class LoginButton_Controller implements Initializable {
 		/*
 		 * lp = new LoginProc(); mp = new MemberProc();
 		 */
+
+		Design design = new Design();
+		design.setRoot(root);
+		design.log();
 	}
 
 	public void btnLogin() {

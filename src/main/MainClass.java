@@ -18,7 +18,7 @@ public class MainClass extends Application {
 
 		LoginButton_Controller ctl = loader.getController();
 		ctl.setRoot(root);
-
+		scene.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
