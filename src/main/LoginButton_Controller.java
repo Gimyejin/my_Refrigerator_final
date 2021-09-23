@@ -74,6 +74,10 @@ public class LoginButton_Controller implements Initializable {
 		stage.show();
 
 	}
+	
+	
+	
+	
 
 //	public void login() {
 //		System.out.println("메뉴페이지로 넘어감");
