@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
+import geonhwe.Login.LoginServiceImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -19,6 +20,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import main.MainFunction_Controller;
 
 public class FoodListController implements Initializable{
 	Parent root;
@@ -36,6 +39,8 @@ public class FoodListController implements Initializable{
 		fxcntView = (ListView)root.lookup("#fxcntView");
 		fxtimeView = (ListView)root.lookup("#fxtimeView");
 		addComboBox();
+		Label fxname = (Label)root.lookup("#fxname");
+		fxname.setText(LoginServiceImpl.staticid+" 님의 냉장고");
 		//setListView();
 		
 	}
@@ -146,8 +151,11 @@ public class FoodListController implements Initializable{
 		}
 	}
 	public void fxCan() { //뒤로가기
-		HyMain hm = new HyMain();
-		hm.exit();
+		Stage stage = (Stage)root.getScene().getWindow();
+		stage.close();
+		MainFunction_Controller mc = new MainFunction_Controller();
+		mc.cold_Storage();
+
 	}
 	private String getComboBox() {
 		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");

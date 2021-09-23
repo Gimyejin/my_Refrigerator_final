@@ -30,10 +30,6 @@ public class HyMain{
 		}
 
 	} 
-	public void exit() {
-		System.out.println("창닫기");	
-	}
-
 
 	/*	@Override
 
