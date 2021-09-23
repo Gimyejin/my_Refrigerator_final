@@ -99,7 +99,7 @@ public class LoginServiceImpl implements LoginService {
 		if(loginCheck()==1) {
 			tmp.toMenu();
 		}else {
-			alertMethod("로그인 실패. 다시 시도해 주세요");
+//			alertMethod("로그인 실패. 다시 시도해 주세요");
 		}
 	}
 	
