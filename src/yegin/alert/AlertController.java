@@ -73,9 +73,10 @@ public class AlertController implements Initializable {
 		stage.show();
 	}
 
-	public static void atler(String msg) {
+	public static void atler(String mss,String msg) {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setContentText(msg);
+		alert.setHeaderText(msg);//헤더 메시지
+		alert.setContentText(mss);//메시지 메인내용
 		alert.show();
 	}
 

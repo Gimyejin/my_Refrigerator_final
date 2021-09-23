@@ -25,7 +25,7 @@ public class MainFunction_Controller implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ms = (MemberService) new MemberServiceImpl();
+		ms = new MemberServiceImpl();
 	}
 
 	public void membershipProc() {
@@ -58,7 +58,7 @@ public class MainFunction_Controller implements Initializable {
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
-		MainFunction_Controller mc = loader.getController();// 페이지가 또 만들어짐
+		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
 		stage.show();
@@ -87,7 +87,7 @@ public class MainFunction_Controller implements Initializable {
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
-		MainFunction_Controller mc = loader.getController();// 페이지가 또 만들어짐
+		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
 		stage.show();
@@ -101,4 +101,5 @@ public class MainFunction_Controller implements Initializable {
 		sc.shelfLifeList();
 
 	}
+
 }

@@ -13,7 +13,7 @@ import geonhwe.member.*;
 import geonhwe.common.*;
 import geonhwe.db.teamproject;
 
-public class MemberServiceImpl {
+public class MemberServiceImpl implements MemberService{
 	Parent root;
 	teamproject tpj = new teamproject();
 

@@ -31,6 +31,7 @@ public class LoginProc {
    }
    public void setRoot(Parent root) {
 	   this.root2 = root;
+	   System.out.println("로그인proc의 (main)root "+root2);
    }
 
 }
