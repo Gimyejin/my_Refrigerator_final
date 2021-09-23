@@ -3,9 +3,20 @@ package main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import nayoung.memo.MemoProc;
+import nayoung.temp.TempProc;
+
+import geonhwe.Login.LoginService;
+import geonhwe.Login.LoginServiceImpl;
+
 import geonhwe.member.MemberService;
 import geonhwe.member.MemberServiceImpl;
 import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,10 +24,14 @@ import javafx.stage.Stage;
 import yegin.alert.AlertController;
 import yegin.shelf_life.shelfLifeController;
 
-public class MainFunction_Controller implements Initializable {
+
+
+public class MainFunction_Controller implements Initializable{
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
+	MemoProc mc;
+	TempProc tc;
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -25,7 +40,11 @@ public class MainFunction_Controller implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 		ms = new MemberServiceImpl();
+		mc = new MemoProc();
+		tc = new TempProc();
+
 	}
 
 	public void membershipProc() {
@@ -37,6 +56,17 @@ public class MainFunction_Controller implements Initializable {
 		System.out.println("취소 클릭");
 		ms.memberCancle();
 	}
+
+	
+	public void btnMemo() {
+		mc.memo();
+	}
+	
+	public void btnTemp() {
+		tc.temp();
+	}
+
+
 
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
@@ -103,3 +133,4 @@ public class MainFunction_Controller implements Initializable {
 	}
 
 }
+

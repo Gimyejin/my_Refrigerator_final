@@ -18,7 +18,12 @@ import main.MainFunction_Controller;
 
 public class LoginServiceImpl implements LoginService {
 	Parent root;
+
+	LoginProc lp;
+	ToMenuProc tmp;
+
 	Parent mainRoot;//들어옴
+
 	teamproject tpj = new teamproject(); 
 	int result = 0;
 	public void setRoot(Parent root) {
@@ -87,9 +92,25 @@ public class LoginServiceImpl implements LoginService {
 		} return result; 
 		//나중에 합칠 때 이제 변수에 값을 줘서 로그인 성공 실패 여부 정하고 조원분들에게 알려드리고 확인하기
 	} 
+
+	public void loginToMenu() {
+		
+		loginCheck();
+		if(loginCheck()==1) {
+			tmp.toMenu();
+		}else {
+//			alertMethod("로그인 실패. 다시 시도해 주세요");
+		}
+	}
+	
+
+//	public void alertMethod(String mss) {
+//		Alert alert = new Alert(AlertType.INFORMATION);
+
 	public void alertMethod(String mss,String msg) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setHeaderText(msg);
+
 		alert.setContentText(mss);
 		alert.show();
 	}
