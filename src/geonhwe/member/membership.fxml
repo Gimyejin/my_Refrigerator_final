@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geonhwe.member.MemberController">
+   <children>
+      <Button layoutX="214.0" layoutY="283.0" mnemonicParsing="false" onAction="#membershipProc" text="회원가입" />
+      <Button layoutX="304.0" layoutY="283.0" mnemonicParsing="false" onAction="#memberCancle" text="취소" />
+      <TextField fx:id="fxId" layoutX="153.0" layoutY="106.0" />
+      <TextField fx:id="fxPw" layoutX="153.0" layoutY="157.0" />
+      <TextField fx:id="fxName" layoutX="153.0" layoutY="203.0" />
+      <Label layoutX="38.0" layoutY="102.0" text="아이디">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="153.0" text="비밀번호">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="200.0" text="이름">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="14.0" text="회 원 가 입 창">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
