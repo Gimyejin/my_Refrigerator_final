@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
@@ -25,9 +24,7 @@ import yegin.alert.AlertController;
 import yegin.common.Method;
 import yegin.shelf_life.shelfLifeController;
 
-
-
-public class MainFunction_Controller implements Initializable{
+public class MainFunction_Controller implements Initializable {
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
@@ -58,16 +55,13 @@ public class MainFunction_Controller implements Initializable{
 		ms.memberCancle();
 	}
 
-	
 	public void btnMemo() {
 		mc.memo();
 	}
-	
+
 	public void btnTemp() {
 		tc.temp();
 	}
-
-
 
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
@@ -132,11 +126,15 @@ public class MainFunction_Controller implements Initializable{
 		sc.shelfLifeList();
 
 	}
+
 	public void back() {
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/menu.fxml");
-		
+		if (newRoot == null) {
+			mt.mfc((Stage) root.getScene().getWindow(), "/main/menu.fxml");
+		} else {
+			mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/menu.fxml");
+		}
+
 	}
 
 }
-
