@@ -31,9 +31,10 @@ public class FoodListController implements Initializable{
 	ArrayList<FoodDTO> dtolist;
 	ObservableList<String> NameString,timeString, cntString;
 	HyDB hb;
+	Button btnmod, btnrm;
 
 
-	public void setRoot(Parent root) { //킬때세팅해놓는것-> 리스트를표시해주어야함
+	public void setRoot(Parent root) {
 		this.root = root;
 		fxNameView = (ListView)root.lookup("#fxNameView");
 		fxcntView = (ListView)root.lookup("#fxcntView");
@@ -41,44 +42,51 @@ public class FoodListController implements Initializable{
 		addComboBox();
 		Label fxname = (Label)root.lookup("#fxname");
 		fxname.setText(LoginServiceImpl.staticid+" 님의 냉장고");
-		//setListView();
-		
+		setListView();
+		btnmod = (Button)root.lookup("#mod");
+		btnrm = (Button)root.lookup("#rm");
+		btnmod.setDisable(true);
+		btnrm.setDisable(true);
+		fxNameView.setOnMousePressed(e->{
+			btnmod.setDisable(false);
+			btnrm.setDisable(false);
+		});
+
 	}
 	public void addComboBox() {
 		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");
 		if(cnt != null) {
-				cnt.getItems().addAll("1","2","3","4","5","6","7","8","9","10"
-						,"11","12","13","14","15","16","17","18","19","20");
-		}
+			cnt.getItems().addAll("1","2","3","4","5","6","7","8","9","10"
+					,"11","12","13","14","15","16","17","18","19","20");
 	}
 
-	public void fxOk() {
-		//Button ok = (Button)root.lookup("#fxok");	
-		//	ok.setOnAction(e->{
-		//		return;
-		//	});	추가수정삭제버튼누르면 textarea활성화 후 확인버튼누르면 완료되게 구현해보려했으나 막힘
-		// 텍스트를 입력후 추가수정삭제버튼을 누르면 실행되는 방법으로 진행중
 	}
 	
 	public void setListView() { //디비에서값을받아와 fx리스트에 세팅
-		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
-		list = hb.DbValue();
-			
 		NameString = FXCollections.observableArrayList();
 		cntString = FXCollections.observableArrayList();
 		timeString = FXCollections.observableArrayList();
-		for(int i=0;i<list.size();i++) {
-			NameString.add(list.get(i).getFoodName());
-			cntString.add(list.get(i).getFoodNum());
-			timeString.add(list.get(i).getFoodTime());
-		}
+		NameString.add("음식");
+		cntString.add("수량");
+		timeString.add("날짜");
+		
+		ArrayList<FoodDTO> list = hb.DbValue();		
+
+		//for(int i=0;i<list.size();i++) {
+		//	System.out.println(list.get(i).getFoodName());
+		//	System.out.println(list.get(i).getFoodNum());
+		//	System.out.println(list.get(i).getFoodTime());
+		//}
+		if(list!=null) {
+			for(int i=0;i<list.size();i++) {
+				NameString.add(list.get(i).getFoodName());
+				cntString.add(list.get(i).getFoodNum());
+				timeString.add(list.get(i).getFoodTime());
+			}
+		} 
 		fxNameView.setItems(NameString);
 		fxcntView.setItems(cntString);
 		fxtimeView.setItems(timeString);
-			
-		//sql문작성해서 값들 뽑아오고
-		//여기서 쓰는 리스트에 저장해서 만들고
-		//fx리스트뷰에  담아주기?	
 			
 	}
 	
@@ -98,8 +106,6 @@ public class FoodListController implements Initializable{
 		SimpleDateFormat s = new SimpleDateFormat("MM월 dd일 aa hh시"); //현재시간
 		String str = s.format(date);
 		dto.setFoodTime(str);
-		//Label fxmsg = (Label)root.lookup("#fxmsg");
-		//fxmsg.setText("추가되었습니다");
 		System.out.println(dto.getFoodName()+" "+dto.getFoodNum());
 		int result = hb.insert(dto);
 		if(result==1) {
@@ -109,21 +115,23 @@ public class FoodListController implements Initializable{
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("실패");
 			alt.show();
-		}	
-		
+		}
+
 	}
 
 	public void fxmod() { //수정기능
-		FoodDTO dto = new FoodDTO(); 
+		FoodDTO dtomod = new FoodDTO(); 
 		fxNameView.getSelectionModel().selectedIndexProperty().
 		addListener((observable, oldValue, newValue)->{
-			dto.setOldName(NameString.get((int)newValue));	//마우스로 선택한값 set
+			dtomod.setOldName(NameString.get((int)newValue));	//마우스로 선택한값 set
 		});
+		//ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
+		//dto.setOldName(a.get(0));
 		TextArea food = (TextArea)root.lookup("#fxaddtext");
 		ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set	
-		dto.setFoodName(food.getText());
-		dto.setFoodNum(getComboBox());
-		int result = hb.update(dto);
+		dtomod.setFoodName(food.getText());
+		dtomod.setFoodNum(getComboBox());
+		int result = hb.update(dtomod);
 		if(result==1) {
 			Label fxmsg = (Label)root.lookup("#fxmsg");
 			fxmsg.setText("수정되었습니다");
@@ -132,6 +140,8 @@ public class FoodListController implements Initializable{
 			alt.setContentText("실패");
 			alt.show(); return;
 		}
+		setListView();
+
 	}
 	
 	public void fxrm() { //삭제기능
@@ -139,6 +149,8 @@ public class FoodListController implements Initializable{
 		fxNameView.getSelectionModel().selectedIndexProperty().
 		addListener((observable, oldValue, newValue)->{
 			dto.setFoodName(NameString.get((int)newValue));	//마우스로 선택한값 set
+			dto.setFoodNum(cntString.get((int)newValue));
+			dto.setFoodTime(timeString.get((int)newValue));
 		});
 		int result = hb.remove(dto);
 		if(result==1) {
@@ -147,8 +159,14 @@ public class FoodListController implements Initializable{
 		}else {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("실패");
-			alt.show(); return;
+			alt.show(); 
 		}
+		fxNameView.getItems().remove(dto.getFoodName());
+		fxcntView.getItems().remove(dto.getFoodNum());
+		fxtimeView.getItems().remove(dto.getFoodTime());
+		setListView();
+		
+		
 	}
 	public void fxCan() { //뒤로가기
 		Stage stage = (Stage)root.getScene().getWindow();
@@ -157,7 +175,7 @@ public class FoodListController implements Initializable{
 		mc.cold_Storage();
 
 	}
-	private String getComboBox() {
+	public String getComboBox() {
 		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");
 		String su = null;
 		if(cnt.getValue() == null) {
@@ -172,7 +190,6 @@ public class FoodListController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hb = new HyDB();
-		//Main객체,DB객체 필요
 		
 	}
 

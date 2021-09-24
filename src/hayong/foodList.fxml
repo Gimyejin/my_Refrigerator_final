@@ -21,16 +21,13 @@
       </Label>
       <ListView fx:id="fxNameView" layoutX="43.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
       <Label fx:id="fxmsg" layoutX="40.0" layoutY="297.0" prefHeight="15.0" prefWidth="103.0" />
-      <Button fx:id="fxok" layoutX="245.0" layoutY="415.0" mnemonicParsing="false" text="확인" />
-      <Button layoutX="206.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxrm" text="삭제" />
-      <Button layoutX="129.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxmod" text="수정" />
+      <Button fx:id="rm" layoutX="206.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxrm" text="삭제" />
+      <Button fx:id="mod" layoutX="129.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxmod" text="수정" />
       <TextArea fx:id="fxaddtext" layoutX="43.0" layoutY="372.0" prefHeight="54.0" prefWidth="171.0" />
-      <Button layoutX="52.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxadd" text="추가" />
+      <Button fx:id="add" layoutX="52.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxadd" text="추가" />
       <ComboBox fx:id="fxcount" layoutX="245.0" layoutY="372.0" prefHeight="23.0" prefWidth="103.0" promptText="수량" />
       <Button layoutX="307.0" layoutY="316.0" mnemonicParsing="false" onAction="#fxCan" text="뒤로 가기" />
-      <ListView fx:id="fxcntview" layoutX="181.0" layoutY="51.0" prefHeight="225.0" prefWidth="48.0" />
-      <ListView fx:id="fxtimeview" layoutX="227.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
+      <ListView fx:id="fxcntView" layoutX="181.0" layoutY="51.0" prefHeight="225.0" prefWidth="48.0" />
+      <ListView fx:id="fxtimeView" layoutX="227.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
    </children>
 </AnchorPane>
-
-

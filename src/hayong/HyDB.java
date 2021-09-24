@@ -27,17 +27,20 @@ public static Connection conn;
 	public ArrayList<FoodDTO> DbValue() {
 		
 		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
+		list = null;
 		try {
 			String sql = "select * from item_db where id=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, LoginServiceImpl.staticid);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				FoodDTO dto = new FoodDTO();
-				dto.setFoodName(rs.getString("item_name"));
-				dto.setFoodNum(String.valueOf(rs.getInt("item_count")));
-				dto.setFoodTime(rs.getString("item_add_date"));
-				list.add(dto);
+			if(rs!=null) {
+				while(rs.next()) {
+					FoodDTO dto = new FoodDTO();
+					dto.setFoodName(rs.getString("item_name"));
+					dto.setFoodNum(String.valueOf("item_count"));
+					dto.setFoodTime(rs.getString("item_add_date"));
+					list.add(dto);
+				}
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -47,8 +50,18 @@ public static Connection conn;
 	public int insert(FoodDTO dto) {
 		int result=0;
 		try {
+			String sql2 = "insert into item values (?,?)";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setString(1, LoginServiceImpl.staticid);
+			ps2.setString(2, dto.getFoodName());
+			result= ps2.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
 			String sql = "insert into item_db values (?,?,?,?,?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);		
 			ps.setString(1, LoginServiceImpl.staticid);
 			ps.setString(2, dto.getFoodName());
 			ps.setString(3, dto.getFoodTime());
@@ -86,6 +99,15 @@ public static Connection conn;
 			ps.setString(1, LoginServiceImpl.staticid);
 			ps.setString(2, dto.getFoodName());
 			result = ps.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			String sql2 = "delete item where id=? and item_name=?";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setString(1, LoginServiceImpl.staticid);
+			ps2.setString(2, dto.getFoodName());
+			result = ps2.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
 		} 
