@@ -31,6 +31,7 @@ public class AlertController implements Initializable {
 
 	public void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;// 현재 페이지 root
+
 		fxListview = (ListView) newRoot.lookup("#viewList");
 		System.out.println("fxListview:" + fxListview);
 		setList();

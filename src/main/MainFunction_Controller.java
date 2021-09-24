@@ -14,6 +14,8 @@ import geonhwe.Login.LoginServiceImpl;
 
 import geonhwe.member.MemberService;
 import geonhwe.member.MemberServiceImpl;
+import hayong.FoodListController;
+import hayong.HyMain;
 import javafx.fxml.FXMLLoader;
 
 import javafx.fxml.Initializable;
@@ -30,6 +32,7 @@ public class MainFunction_Controller implements Initializable {
 	MemberService ms;
 	MemoProc mc;
 	TempProc tc;
+	hayong.HyMain hy;
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -42,6 +45,7 @@ public class MainFunction_Controller implements Initializable {
 		ms = new MemberServiceImpl();
 		mc = new MemoProc();
 		tc = new TempProc();
+		hy = new HyMain();
 
 	}
 
@@ -80,11 +84,13 @@ public class MainFunction_Controller implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 		stage.setScene(sc);
 		stage.show();
 	}
@@ -109,9 +115,10 @@ public class MainFunction_Controller implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
@@ -125,6 +132,12 @@ public class MainFunction_Controller implements Initializable {
 		sc.setRoot(newRoot);
 		sc.shelfLifeList();
 
+	}
+	public void food() {
+		System.out.println("관리로이동");
+		hy.foodScene();
+
+		
 	}
 
 	public void back() {
