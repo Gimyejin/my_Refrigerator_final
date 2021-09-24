@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
+import yegin.common.Method;
 
 public class shelfLifeController {
 	//클릭시 해당 리스트로 넘어가기?
@@ -72,5 +73,8 @@ public class shelfLifeController {
 	}
 	public void  back() {
 		System.out.println("뒤로 버튼");
+		Method mt = new Method();
+		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/coldStorage_function.fxml");
+		
 	}
 }

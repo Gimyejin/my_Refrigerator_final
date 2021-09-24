@@ -15,6 +15,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import yegin.common.Method;
 
 public class AlertController implements Initializable {
 	Parent root;
@@ -22,14 +23,14 @@ public class AlertController implements Initializable {
 	ListView<String> fxListview;
 	ObservableList<String> listView;
 	Scene sc;
-	
+
 	public void setRoot(Parent root) {
-		this.root = root;
-		System.out.println("root:" + root);// 값 잇음
+		this.root = root;// 이전 페이지 root
+		System.out.println("root:" + root);// 값 없어짐...
 	}
 
 	public void setRoot2(Parent newRoot) {
-		this.newRoot = newRoot;
+		this.newRoot = newRoot;// 현재 페이지 root
 		fxListview = (ListView) newRoot.lookup("#viewList");
 		System.out.println("fxListview:" + fxListview);
 		setList();
@@ -41,7 +42,7 @@ public class AlertController implements Initializable {
 		for (int i = 1; i < 8; i++) {
 			// 물품 들어갈때 수정할 것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			listView.add("갤럭시S" + i);
-			System.out.println(listView);
+
 		}
 		System.out.println(fxListview);
 		fxListview.setItems(listView);
@@ -56,7 +57,6 @@ public class AlertController implements Initializable {
 
 		try {
 			newRoot = loader.load();
-			System.out.println("작동 여부");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,16 +67,17 @@ public class AlertController implements Initializable {
 
 		Stage stage = (Stage) root.getScene().getWindow();
 		AlertController ac = loader.getController();// 페이지가 또 만들어짐
+		ac.setRoot(root);
 		ac.setRoot2(newRoot);
 
 		stage.setScene(sc);
 		stage.show();
 	}
 
-	public static void atler(String mss,String msg) {
+	public static void atler(String mss, String msg) {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setHeaderText(msg);//헤더 메시지
-		alert.setContentText(mss);//메시지 메인내용
+		alert.setHeaderText(msg);// 헤더 메시지
+		alert.setContentText(mss);// 메시지 메인내용
 		alert.show();
 	}
 
@@ -89,11 +90,18 @@ public class AlertController implements Initializable {
 	}
 
 	public void back() {
-		sc = new Scene(root);
-		Stage stage = (Stage) root.getScene().getWindow();
-		stage.setScene(sc);
-		stage.show();
+		System.out.println("root값(이전페이지 루트임) " + root);
+		System.out.println("newroot값" + newRoot);
+		Method mt = new Method();
+		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/frozenStorage_function.fxml");
+		//sc = new Scene(root);
+		
+		//Stage stage = (Stage) root.getScene().getWindow();
+		//System.out.println(root.getScene());
+		//stage.setScene(sc);
+		//stage.show();
 		System.out.println("뒤로가기");
+		
 	}
 
 	@Override

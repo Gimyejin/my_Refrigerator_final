@@ -22,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
+import yegin.common.Method;
 import yegin.shelf_life.shelfLifeController;
 
 
@@ -130,6 +131,11 @@ public class MainFunction_Controller implements Initializable{
 		sc.setRoot(newRoot);
 		sc.shelfLifeList();
 
+	}
+	public void back() {
+		Method mt = new Method();
+		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/menu.fxml");
+		
 	}
 
 }
