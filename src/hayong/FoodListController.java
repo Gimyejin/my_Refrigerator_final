@@ -23,160 +23,214 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
 
-public class FoodListController implements Initializable{
+public class FoodListController implements Initializable {
 	Parent root;
 	ListView<String> fxNameView;
 	ListView<String> fxcntView;
 	ListView<String> fxtimeView;
 	ArrayList<FoodDTO> dtolist;
-	ObservableList<String> NameString,timeString, cntString;
+	ObservableList<String> NameString, timeString, cntString, lifeString;
 	HyDB hb;
+	ComboBox<String> year, month, day;
+	String shelfday;
 
-
-	public void setRoot(Parent root) { //킬때세팅해놓는것-> 리스트를표시해주어야함
+	public void setRoot(Parent root) { // 킬때세팅해놓는것-> 리스트를표시해주어야함
 		this.root = root;
-		fxNameView = (ListView)root.lookup("#fxNameView");
-		fxcntView = (ListView)root.lookup("#fxcntView");
-		fxtimeView = (ListView)root.lookup("#fxtimeView");
+		fxNameView = (ListView) root.lookup("#fxNameView");
+		fxcntView = (ListView) root.lookup("#fxcntView");
+		fxtimeView = (ListView) root.lookup("#fxtimeView");
 		addComboBox();
-		Label fxname = (Label)root.lookup("#fxname");
-		fxname.setText(LoginServiceImpl.staticid+" 님의 냉장고");
-		//setListView();
-		
+		shelfLifeComboBox();
+		Label fxname = (Label) root.lookup("#fxname");
+		fxname.setText(LoginServiceImpl.staticid + " 님의 냉장고");
+		// setListView();
+
 	}
+
 	public void addComboBox() {
-		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");
-		if(cnt != null) {
-				cnt.getItems().addAll("1","2","3","4","5","6","7","8","9","10"
-						,"11","12","13","14","15","16","17","18","19","20");
+		ComboBox<String> cnt = (ComboBox<String>) root.lookup("#fxcount");
+		if (cnt != null) {
+			cnt.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+					"17", "18", "19", "20");
 		}
 	}
 
 	public void fxOk() {
-		//Button ok = (Button)root.lookup("#fxok");	
-		//	ok.setOnAction(e->{
-		//		return;
-		//	});	추가수정삭제버튼누르면 textarea활성화 후 확인버튼누르면 완료되게 구현해보려했으나 막힘
+		// Button ok = (Button)root.lookup("#fxok");
+		// ok.setOnAction(e->{
+		// return;
+		// }); 추가수정삭제버튼누르면 textarea활성화 후 확인버튼누르면 완료되게 구현해보려했으나 막힘
 		// 텍스트를 입력후 추가수정삭제버튼을 누르면 실행되는 방법으로 진행중
 	}
-	
-	public void setListView() { //디비에서값을받아와 fx리스트에 세팅
+
+	public void setListView() { // 디비에서값을받아와 fx리스트에 세팅
 		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
 		list = hb.DbValue();
-			
+
 		NameString = FXCollections.observableArrayList();
 		cntString = FXCollections.observableArrayList();
 		timeString = FXCollections.observableArrayList();
-		for(int i=0;i<list.size();i++) {
+		lifeString = FXCollections.observableArrayList();
+
+		for (int i = 0; i < list.size(); i++) {
 			NameString.add(list.get(i).getFoodName());
 			cntString.add(list.get(i).getFoodNum());
 			timeString.add(list.get(i).getFoodTime());
+			lifeString.add(list.get(i).getOldName());
 		}
 		fxNameView.setItems(NameString);
 		fxcntView.setItems(cntString);
 		fxtimeView.setItems(timeString);
-			
-		//sql문작성해서 값들 뽑아오고
-		//여기서 쓰는 리스트에 저장해서 만들고
-		//fx리스트뷰에  담아주기?	
-			
+
+		// sql문작성해서 값들 뽑아오고
+		// 여기서 쓰는 리스트에 저장해서 만들고
+		// fx리스트뷰에 담아주기?
+
 	}
-	
-	public void fxadd() { //추가기능
-		
-		TextArea food = (TextArea)root.lookup("#fxaddtext");
-		ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set
-		FoodDTO dto = new FoodDTO(); 
-		if(food==null||com==null) {
+
+	public void fxadd() { // 추가기능
+
+		TextArea food = (TextArea) root.lookup("#fxaddtext");
+		ComboBox<String> com = (ComboBox<String>) root.lookup("#fxcount"); // 입력값 set
+
+		//String shelfday = year.getValue() + month.getValue() + day.getValue();
+		//System.out.println(shelfday);
+
+		FoodDTO dto = new FoodDTO();
+		if (food == null || com == null) {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("추가할 음식과 수량을 입력해주세요");
-			alt.show(); return;
+			alt.show();
+			return;
 		}
 		dto.setFoodName(food.getText());
 		dto.setFoodNum(getComboBox());
-		Date date = new Date(); 
-		SimpleDateFormat s = new SimpleDateFormat("MM월 dd일 aa hh시"); //현재시간
+		dto.setShelfLife(shelfday);
+
+		Date date = new Date();
+		SimpleDateFormat s = new SimpleDateFormat("MM월 dd일 aa hh시"); // 현재시간
 		String str = s.format(date);
 		dto.setFoodTime(str);
-		//Label fxmsg = (Label)root.lookup("#fxmsg");
-		//fxmsg.setText("추가되었습니다");
-		System.out.println(dto.getFoodName()+" "+dto.getFoodNum());
+		// Label fxmsg = (Label)root.lookup("#fxmsg");
+		// fxmsg.setText("추가되었습니다");
+		System.out.println(dto.getFoodName() + " " + dto.getFoodNum() + " " + dto.getShelfLife());
 		int result = hb.insert(dto);
-		if(result==1) {
-			Label fxmsg = (Label)root.lookup("#fxmsg");
+		if (result == 1) {
+			Label fxmsg = (Label) root.lookup("#fxmsg");
 			fxmsg.setText("추가되었습니다");
 		} else {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("실패");
 			alt.show();
-		}	
-		
+		}
+
 	}
 
-	public void fxmod() { //수정기능
-		FoodDTO dto = new FoodDTO(); 
-		fxNameView.getSelectionModel().selectedIndexProperty().
-		addListener((observable, oldValue, newValue)->{
-			dto.setOldName(NameString.get((int)newValue));	//마우스로 선택한값 set
+	public void fxmod() { // 수정기능
+		FoodDTO dto = new FoodDTO();
+		fxNameView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+			dto.setOldName(NameString.get((int) newValue)); // 마우스로 선택한값 set
 		});
-		TextArea food = (TextArea)root.lookup("#fxaddtext");
-		ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set	
+		TextArea food = (TextArea) root.lookup("#fxaddtext");
+		ComboBox<String> com = (ComboBox<String>) root.lookup("#fxcount"); // 입력값 set
 		dto.setFoodName(food.getText());
 		dto.setFoodNum(getComboBox());
 		int result = hb.update(dto);
-		if(result==1) {
-			Label fxmsg = (Label)root.lookup("#fxmsg");
+		if (result == 1) {
+			Label fxmsg = (Label) root.lookup("#fxmsg");
 			fxmsg.setText("수정되었습니다");
-		}else {
+		} else {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("실패");
-			alt.show(); return;
+			alt.show();
+			return;
 		}
 	}
-	
-	public void fxrm() { //삭제기능
-		FoodDTO dto = new FoodDTO(); 
-		fxNameView.getSelectionModel().selectedIndexProperty().
-		addListener((observable, oldValue, newValue)->{
-			dto.setFoodName(NameString.get((int)newValue));	//마우스로 선택한값 set
+
+	public void fxrm() { // 삭제기능
+		FoodDTO dto = new FoodDTO();
+		fxNameView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+			dto.setFoodName(NameString.get((int) newValue)); // 마우스로 선택한값 set
 		});
 		int result = hb.remove(dto);
-		if(result==1) {
-			Label fxmsg = (Label)root.lookup("#fxmsg");
+		if (result == 1) {
+			Label fxmsg = (Label) root.lookup("#fxmsg");
 			fxmsg.setText("삭제되었습니다");
-		}else {
+		} else {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("실패");
-			alt.show(); return;
+			alt.show();
+			return;
 		}
 	}
-	public void fxCan() { //뒤로가기
-		Stage stage = (Stage)root.getScene().getWindow();
+
+	public void fxCan() { // 뒤로가기
+		Stage stage = (Stage) root.getScene().getWindow();
 		stage.close();
 		MainFunction_Controller mc = new MainFunction_Controller();
 		mc.cold_Storage();
 
 	}
+
 	private String getComboBox() {
-		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");
+		ComboBox<String> cnt = (ComboBox<String>) root.lookup("#fxcount");
 		String su = null;
-		if(cnt.getValue() == null) {
-			su= "1";
-		}else {
+		if (cnt.getValue() == null) {
+			su = "1";
+		} else {
 			su = cnt.getValue().toString();
 		}
 		return su;
 	}
 
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hb = new HyDB();
-		//Main객체,DB객체 필요
-		
+		// Main객체,DB객체 필요
+
 	}
 
+	public void shelfLifeComboBox() {// 유통기한
+		ComboBox<String> year = (ComboBox<String>) root.lookup("#year");
+		if (year != null) {
+			year.getItems().addAll("2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030");
+		}
+		ComboBox<String> month = (ComboBox<String>) root.lookup("#month");
+		if (month != null) {
+			month.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+		}
 
+		ComboBox<String> day = (ComboBox<String>) root.lookup("#day");
+		ArrayList<String> allDay = new ArrayList<String>();
+
+		month.setOnAction(e -> {
+			System.out.println(month.getValue());
+			day.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09");
+			if (month.getValue() == "01" || month.getValue() == "03" || month.getValue() == "05"
+					|| month.getValue() == "07" || month.getValue() == "08" || month.getValue() == "10"
+					|| month.getValue() == "12") {
+
+				for (int i = 10; i < 32; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			} else if (month.getValue() == "02") {
+				for (int i = 10; i < 29; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			} else {
+				for (int i = 10; i < 31; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			}
+			for (String chday : allDay) {
+				day.getItems().add(chday);
+			}
+
+			day.setOnAction(a -> {
+				 shelfday = year.getValue() +"년"+ month.getValue() + "월"+day.getValue()+"일";
+				System.out.println(shelfday);
+			});
+
+		});
+	}
 }
-
-

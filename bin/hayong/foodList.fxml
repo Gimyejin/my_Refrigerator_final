@@ -22,7 +22,7 @@
       </Label>
       <ListView fx:id="fxNameView" layoutX="43.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
       <Label fx:id="fxmsg" layoutX="40.0" layoutY="297.0" prefHeight="15.0" prefWidth="103.0" />
-      <Button fx:id="fxok" layoutX="346.0" layoutY="427.0" mnemonicParsing="false" text="확인" />
+      <!--<Button fx:id="fxok" layoutX="346.0" layoutY="427.0" mnemonicParsing="false" text="확인" />  -->
       <Button layoutX="206.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxrm" text="삭제" />
       <Button layoutX="129.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxmod" text="수정" />
       <TextArea fx:id="fxaddtext" layoutX="60.0" layoutY="373.0" prefHeight="45.0" prefWidth="191.0" />
@@ -31,9 +31,9 @@
       <Button layoutX="312.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxCan" text="뒤로 가기" />
       <ListView fx:id="fxcntview" layoutX="181.0" layoutY="51.0" prefHeight="225.0" prefWidth="48.0" />
       <ListView fx:id="fxtimeview" layoutX="227.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
-      <ComboBox fx:id="fxcount1" layoutX="56.0" layoutY="427.0" prefHeight="23.0" prefWidth="68.0" promptText="년도" />
-      <ComboBox fx:id="fxcount11" layoutX="130.0" layoutY="427.0" prefHeight="23.0" prefWidth="56.0" promptText="월" />
-      <ComboBox fx:id="fxcount111" layoutX="192.0" layoutY="427.0" prefHeight="23.0" prefWidth="56.0" promptText="일" />
+      <ComboBox fx:id="year" layoutX="56.0" layoutY="427.0" prefHeight="23.0" prefWidth="68.0" promptText="년도" />
+      <ComboBox fx:id="month" layoutX="130.0" layoutY="427.0" prefHeight="23.0" prefWidth="56.0" promptText="월" />
+      <ComboBox fx:id="day" layoutX="192.0" layoutY="427.0" prefHeight="23.0" prefWidth="56.0" promptText="일" />
       <Text layoutX="35.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="품목 명" wrappingWidth="22.796875" />
       <Text layoutX="29.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유통기한" textAlignment="CENTER" wrappingWidth="22.79687464237213">
          <font>

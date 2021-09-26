@@ -1,7 +1,10 @@
 package yegin.shelf_life;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import hayong.FoodDTO;
+import hayong.HyDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -63,10 +66,17 @@ public class shelfLifeController {
 	private void setList() {
 		System.out.println("list까지옴");
 		listView = FXCollections.observableArrayList();
-		for (int i = 1; i < 8; i++) {
+		HyDB db = new HyDB();
+		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
+		list =db.DbValue();
+		
+		
+		
+		for (int i = 0; i < list.size(); i++) {
 			//물품 들어갈때 수정할 것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			listView.add("갤럭시S" + i);
-			System.out.println(listView);
+			//listView.add("갤럭시S" + i);
+			listView.add(list.get(i).getFoodName()+" : "+  list.get(i).getShelfLife());
+			//System.out.println(listView);
 		}
 		System.out.println(fxListview);
 		fxListview.setItems(listView);

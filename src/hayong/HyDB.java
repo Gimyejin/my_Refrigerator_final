@@ -37,6 +37,7 @@ public static Connection conn;
 				dto.setFoodName(rs.getString("item_name"));
 				dto.setFoodNum(String.valueOf(rs.getInt("item_count")));
 				dto.setFoodTime(rs.getString("item_add_date"));
+				dto.setShelfLife(rs.getString("item_date"));
 				list.add(dto);
 			}
 		}catch (Exception e) {
@@ -53,7 +54,7 @@ public static Connection conn;
 			ps.setString(2, dto.getFoodName());
 			ps.setString(3, dto.getFoodTime());
 			ps.setInt(4, Integer.parseInt(dto.getFoodNum()));
-			ps.setString(5, null);
+			ps.setString(5, dto.getShelfLife());
 		
 			result = ps.executeUpdate();
 		}catch (Exception e) {
