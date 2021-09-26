@@ -21,7 +21,9 @@ public class shelfLifeController {
 	Parent root;
 	Parent newRoot;
 	ListView<String> fxListview;
+	ListView<String> fxListview1;
 	ObservableList<String> listView;
+	ObservableList<String> listView1;
 
 	public void setRoot(Parent root) {// 밖에서 이걸 건드림
 		this.root = root;
@@ -31,7 +33,8 @@ public class shelfLifeController {
 	private void setRoot2(Parent newRoot) {// 내부에서 건드림
 		this.newRoot = newRoot;
 		fxListview = (ListView) newRoot.lookup("#viewList");
-		System.out.println("fxListview:" +fxListview);
+		fxListview1 = (ListView) newRoot.lookup("#viewList1");
+		
 		setList();
 	}
 
@@ -66,6 +69,7 @@ public class shelfLifeController {
 	private void setList() {
 		System.out.println("list까지옴");
 		listView = FXCollections.observableArrayList();
+		listView1 = FXCollections.observableArrayList();
 		HyDB db = new HyDB();
 		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
 		list =db.DbValue();
@@ -73,18 +77,21 @@ public class shelfLifeController {
 		
 		
 		for (int i = 0; i < list.size(); i++) {
-			//물품 들어갈때 수정할 것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			//listView.add("갤럭시S" + i);
-			listView.add(list.get(i).getFoodName()+" : "+  list.get(i).getShelfLife());
+			listView.add(list.get(i).getFoodName());
+			listView1.add( list.get(i).getShelfLife());
 			//System.out.println(listView);
 		}
 		System.out.println(fxListview);
 		fxListview.setItems(listView);
+		fxListview1.setItems(listView1);
 	}
 	public void  back() {
 		System.out.println("뒤로 버튼");
 		Method mt = new Method();
 		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/coldStorage_function.fxml");
 		
+	}
+	public void chage() {
+		System.out.println("수정버튼");
 	}
 }
