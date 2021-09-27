@@ -182,7 +182,7 @@ public class shelfLifeController {
 			if (result == 1) {
 				ac.atler("유통기한 수정이 완료되었습니다.", "수정");
 				close();
-				setList();
+				//setList();
 			} else {
 				ac.atler("유통기한 수정이 실패하였습니다.", "수정");
 			}
