@@ -42,6 +42,7 @@ public class FoodListController implements Initializable{
 	String shelfday;
 
 	public void setRoot(Parent root) {
+		System.out.println("깃실험1");
 		this.root = root;
 		fxNameView = (ListView)root.lookup("#fxNameView");
 		fxcntView = (ListView)root.lookup("#fxcntView");
