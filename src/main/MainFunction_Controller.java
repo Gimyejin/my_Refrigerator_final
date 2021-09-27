@@ -24,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
 import yegin.common.Method;
+import yegin.member.MemberChange;
 import yegin.shelf_life.shelfLifeController;
 
 public class MainFunction_Controller implements Initializable {
@@ -94,13 +95,18 @@ public class MainFunction_Controller implements Initializable {
 		stage.setScene(sc);
 		stage.show();
 	}
+	public void memberchange() {
+		MemberChange memberC= new  MemberChange();
+		memberC.setRoot(newRoot);
+		memberC.change();
+	}
 
-	public void alert() {
+	/*public void alert() {
 		System.out.println("알람");
 		AlertController ac = new AlertController();
 		ac.setRoot(newRoot);
 		ac.alert();
-	}
+	}*/
 
 	public void cold_Storage() {
 		System.out.println("냉장고 버튼 눌림");
