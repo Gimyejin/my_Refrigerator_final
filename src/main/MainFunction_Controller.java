@@ -135,9 +135,7 @@ public class MainFunction_Controller implements Initializable {
 	}
 	public void food() {
 		System.out.println("관리로이동");
-		hy.foodScene();
-
-		
+		hy.foodScene();	
 	}
 
 	public void back() {

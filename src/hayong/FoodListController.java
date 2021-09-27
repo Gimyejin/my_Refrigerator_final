@@ -1,5 +1,6 @@
 package hayong;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -9,8 +10,10 @@ import java.util.Date;
 import geonhwe.Login.LoginServiceImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -23,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
+import yegin.common.Method;
 
 public class FoodListController implements Initializable{
 	Parent root;
@@ -33,8 +37,8 @@ public class FoodListController implements Initializable{
 	AnchorPane pane;
 	ObservableList<String> NameString,timeString, cntString;
 	HyDB hb;
+	MainFunction_Controller mc;
 	Button btnmod, btnrm;
-
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -70,12 +74,15 @@ public class FoodListController implements Initializable{
 	}
 	
 	public void setListView() { //디비에서값을받아와 fx리스트에 세팅
+		fxNameView.getItems().clear();
+		fxcntView.getItems().clear();
+		fxtimeView.getItems().clear();
 		NameString = FXCollections.observableArrayList();
 		cntString = FXCollections.observableArrayList();
 		timeString = FXCollections.observableArrayList();
 		NameString.add("음식");
 		cntString.add("수량");
-		timeString.add("날짜");
+		timeString.add("추가날짜");
 		
 		ArrayList<FoodDTO> list = hb.DbValue();
 		//for(int i=0;i<list.size();i++) {
@@ -90,9 +97,10 @@ public class FoodListController implements Initializable{
 				timeString.add(list.get(i).getFoodTime());
 			}
 		} 
-		fxNameView.setItems(NameString);
-		fxcntView.setItems(cntString);
-		fxtimeView.setItems(timeString);
+			fxNameView.setItems(NameString);
+			fxcntView.setItems(cntString);
+			fxtimeView.setItems(timeString);
+		
 			
 	}
 	
@@ -101,7 +109,7 @@ public class FoodListController implements Initializable{
 		TextArea food = (TextArea)root.lookup("#fxaddtext");
 		ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set
 		FoodDTO dto = new FoodDTO(); 
-		if(food==null||com==null) {
+		if(food==null) {
 			Alert alt = new Alert(AlertType.INFORMATION);
 			alt.setContentText("추가할 음식과 수량을 입력해주세요");
 			alt.show(); return;
@@ -183,9 +191,6 @@ public class FoodListController implements Initializable{
 	public void fxCan() { //뒤로가기
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
-		//MainFunction_Controller mc = new MainFunction_Controller();
-		//mc.cold_Storage();
-
 	}
 	public String getComboBox() {
 		ComboBox<String> cnt = (ComboBox<String>)root.lookup("#fxcount");
@@ -202,6 +207,7 @@ public class FoodListController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hb = new HyDB();
+		mc = new MainFunction_Controller();
 		
 	}
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="469.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hayong.FoodListController">
+<AnchorPane fx:id="pane" prefHeight="556.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hayong.FoodListController">
    <children>
       <Label fx:id="fxname" alignment="CENTER" layoutX="104.0" layoutY="21.0" prefHeight="22.0" prefWidth="205.0" text="  님의 냉장고" textFill="#4d72e3">
          <opaqueInsets>
@@ -19,15 +19,15 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <ListView fx:id="fxNameView" layoutX="43.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
-      <Label fx:id="fxmsg" layoutX="40.0" layoutY="297.0" prefHeight="15.0" prefWidth="103.0" />
-      <Button fx:id="rm" layoutX="206.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxrm" text="삭제" />
-      <Button fx:id="mod" layoutX="129.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxmod" text="수정" />
-      <TextArea fx:id="fxaddtext" layoutX="43.0" layoutY="372.0" prefHeight="54.0" prefWidth="171.0" />
-      <Button fx:id="add" layoutX="52.0" layoutY="327.0" mnemonicParsing="false" onAction="#fxadd" text="추가" />
-      <ComboBox fx:id="fxcount" layoutX="245.0" layoutY="372.0" prefHeight="23.0" prefWidth="103.0" promptText="수량" />
-      <Button layoutX="307.0" layoutY="316.0" mnemonicParsing="false" onAction="#fxCan" text="뒤로 가기" />
-      <ListView fx:id="fxcntView" layoutX="181.0" layoutY="51.0" prefHeight="225.0" prefWidth="48.0" />
-      <ListView fx:id="fxtimeView" layoutX="227.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />
+      <ListView fx:id="fxNameView" layoutX="43.0" layoutY="51.0" prefHeight="324.0" prefWidth="139.0" />
+      <Label fx:id="fxmsg" layoutX="41.0" layoutY="388.0" prefHeight="22.0" prefWidth="126.0" />
+      <Button fx:id="rm" layoutX="207.0" layoutY="425.0" mnemonicParsing="false" onAction="#fxrm" text="삭제" />
+      <Button fx:id="mod" layoutX="131.0" layoutY="425.0" mnemonicParsing="false" onAction="#fxmod" text="수정" />
+      <TextArea fx:id="fxaddtext" layoutX="45.0" layoutY="468.0" prefHeight="54.0" prefWidth="171.0" />
+      <Button fx:id="add" layoutX="52.0" layoutY="425.0" mnemonicParsing="false" onAction="#fxadd" text="추가" />
+      <ComboBox fx:id="fxcount" layoutX="246.0" layoutY="484.0" prefHeight="23.0" prefWidth="103.0" promptText="수량" />
+      <Button layoutX="298.0" layoutY="425.0" mnemonicParsing="false" onAction="#fxCan" text="뒤로 가기" />
+      <ListView fx:id="fxcntView" layoutX="181.0" layoutY="51.0" prefHeight="324.0" prefWidth="48.0" />
+      <ListView fx:id="fxtimeView" layoutX="227.0" layoutY="51.0" prefHeight="324.0" prefWidth="139.0" />
    </children>
 </AnchorPane>
