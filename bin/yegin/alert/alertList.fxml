@@ -14,8 +14,9 @@
             <Font name="Arial Black" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false" onAction="#revise" prefHeight="7.0" prefWidth="72.0" text="수정" />
+      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false" onAction="#turnOnOff" prefHeight="7.0" prefWidth="72.0" text="on/off" />
       <Button layoutX="306.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
-      <Button layoutX="75.0" layoutY="127.0" mnemonicParsing="false" onAction="#turnOnOff" prefHeight="7.0" prefWidth="72.0" text="on/off" />
+      <Button layoutX="64.0" layoutY="485.0" mnemonicParsing="false" onAction="#add" prefHeight="7.0" prefWidth="72.0" text="추가" />
+      <Button layoutX="219.0" layoutY="485.0" mnemonicParsing="false" onAction="#del" prefHeight="7.0" prefWidth="72.0" text="삭제" />
    </children>
 </AnchorPane>

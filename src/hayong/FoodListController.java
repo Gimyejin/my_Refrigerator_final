@@ -92,10 +92,6 @@ public class FoodListController implements Initializable {
 
 		TextArea food = (TextArea) root.lookup("#fxaddtext");
 		ComboBox<String> com = (ComboBox<String>) root.lookup("#fxcount"); // 입력값 set
-
-		//String shelfday = year.getValue() + month.getValue() + day.getValue();
-		//System.out.println(shelfday);
-
 		FoodDTO dto = new FoodDTO();
 		if (food == null || com == null) {
 			Alert alt = new Alert(AlertType.INFORMATION);

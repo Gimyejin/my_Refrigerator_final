@@ -3,49 +3,27 @@ package yegin.shelf_life;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import geonhwe.Login.LoginServiceImpl;
 import geonhwe.db.GeonhweDB;
 import geonhwe.itemdb.ItemDTO;
+import hayong.FoodDTO;
 
 public class ShelfLife_Method {
-	public int insert(ItemDTO ito) {
-		String sql = "insert into item_db(item_date) values(?,?,?,?,?)";
-		int result1 = 0;
+	
+	public int update(FoodDTO dto) {
+		int result=0;
 		try {
-
-			PreparedStatement ps1 = GeonhweDB.conn.prepareStatement(sql);
-
-			ps1.setString(1, ito.getId());
-			ps1.setString(2, ito.getItem_name());
-			ps1.setString(3, ito.getItem_add_date());
-			ps1.setInt(4, ito.getItem_count());
-			ps1.setString(5, ito.getItem_date());
-
-			result1 = ps1.executeUpdate();
-		} catch (Exception e) {
+			String sql =
+		"update item_db set item_date=? where id=? and item_name=? and item_date=?";
+			PreparedStatement ps = GeonhweDB.conn.prepareStatement(sql);
+			ps.setString(1, dto.getShelfLife());
+			ps.setString(2, LoginServiceImpl.staticid);
+			ps.setString(3, dto.getFoodName());
+			ps.setString(4, dto.getShelfLife());
+			result = ps.executeUpdate();
+		}catch (Exception e) {
 			e.printStackTrace();
-		}
-		return result1;
-	}
-	public ItemDTO itemdto(String inputId) {
-
-		String sql = "select * from item_db where id=?";
-		ItemDTO ito = null;
-		try {
-			PreparedStatement ps1 = GeonhweDB.conn.prepareStatement(sql);
-			ps1.setString(1, inputId);
-
-			ResultSet rs1 = ps1.executeQuery();
-			if(rs1.next()) {
-				ito = new ItemDTO();
-				ito.setId( rs1.getString("id"));
-				ito.setItem_name( rs1.getString("item_name"));
-				ito.setItem_add_date( rs1.getString("item_add_date"));
-				ito.setItem_count(1);
-				ito.setItem_date("item_date");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return ito;
+		} 
+		return result;
 	}
 }

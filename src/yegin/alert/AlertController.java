@@ -26,7 +26,7 @@ public class AlertController implements Initializable {
 
 	public void setRoot(Parent root) {
 		this.root = root;// 이전 페이지 root
-		System.out.println("root:" + root);// 값 없어짐...
+		System.out.println("root:" + root);
 	}
 
 	public void setRoot2(Parent newRoot) {
@@ -82,8 +82,11 @@ public class AlertController implements Initializable {
 		alert.show();
 	}
 
-	public void revise() {
-		System.out.println("수정버튼");
+	public void add() {
+		System.out.println("추가");
+	}
+	public void del() {
+		System.out.println("삭제");
 	}
 
 	public void turnOnOff() {
