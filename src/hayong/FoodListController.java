@@ -20,6 +20,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
 
@@ -29,6 +30,7 @@ public class FoodListController implements Initializable{
 	ListView<String> fxcntView;
 	ListView<String> fxtimeView;
 	ArrayList<FoodDTO> dtolist;
+	AnchorPane pane;
 	ObservableList<String> NameString,timeString, cntString;
 	HyDB hb;
 	Button btnmod, btnrm;
@@ -50,6 +52,11 @@ public class FoodListController implements Initializable{
 		fxNameView.setOnMousePressed(e->{
 			btnmod.setDisable(false);
 			btnrm.setDisable(false);
+		});
+		pane = (AnchorPane)root.lookup("#pane");
+		pane.setOnMousePressed(e->{
+			btnmod.setDisable(true);
+			btnrm.setDisable(true);
 		});
 
 	}
@@ -116,19 +123,22 @@ public class FoodListController implements Initializable{
 			alt.setContentText("실패");
 			alt.show();
 		}
+		setListView();
 
 	}
 
 	public void fxmod() { //수정기능
 		FoodDTO dtomod = new FoodDTO(); 
-		fxNameView.getSelectionModel().selectedIndexProperty().
-		addListener((observable, oldValue, newValue)->{
-			dtomod.setOldName(NameString.get((int)newValue));	//마우스로 선택한값 set
-		});
-		//ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
-		//dto.setOldName(a.get(0));
+		//fxNameView.getSelectionModel().selectedIndexProperty().
+		//addListener((observable, oldValue, newValue)->{
+		//	dtomod.setOldName(NameString.get((int)newValue));	//마우스로 선택한값 set
+		//});
+		System.out.println(dtomod.getOldName());
+		ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
+		dtomod.setOldName(a.get(0));
 		TextArea food = (TextArea)root.lookup("#fxaddtext");
 		ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set	
+		System.out.println(dtomod.getFoodName()+" "+dtomod.getFoodNum());
 		dtomod.setFoodName(food.getText());
 		dtomod.setFoodNum(getComboBox());
 		int result = hb.update(dtomod);
@@ -145,14 +155,17 @@ public class FoodListController implements Initializable{
 	}
 	
 	public void fxrm() { //삭제기능
-		FoodDTO dto = new FoodDTO(); 
-		fxNameView.getSelectionModel().selectedIndexProperty().
-		addListener((observable, oldValue, newValue)->{
-			dto.setFoodName(NameString.get((int)newValue));	//마우스로 선택한값 set
-			dto.setFoodNum(cntString.get((int)newValue));
-			dto.setFoodTime(timeString.get((int)newValue));
-		});
-		int result = hb.remove(dto);
+		FoodDTO dtorm = new FoodDTO(); 
+		//fxNameView.getSelectionModel().selectedIndexProperty().
+		//addListener((observable, oldValue, newValue)->{
+		//	dtorm.setFoodName(NameString.get((int)newValue));	//마우스로 선택한값 set
+		//	dtorm.setFoodNum(cntString.get((int)newValue));
+		//	dtorm.setFoodTime(timeString.get((int)newValue));
+		//});
+		ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
+		dtorm.setFoodName(a.get(0));
+		System.out.println(dtorm.getFoodName()+" "+dtorm.getFoodNum());
+		int result = hb.remove(dtorm);
 		if(result==1) {
 			Label fxmsg = (Label)root.lookup("#fxmsg");
 			fxmsg.setText("삭제되었습니다");
@@ -161,9 +174,9 @@ public class FoodListController implements Initializable{
 			alt.setContentText("실패");
 			alt.show(); 
 		}
-		fxNameView.getItems().remove(dto.getFoodName());
-		fxcntView.getItems().remove(dto.getFoodNum());
-		fxtimeView.getItems().remove(dto.getFoodTime());
+		fxNameView.getItems().remove(dtorm.getFoodName());
+		fxcntView.getItems().remove(dtorm.getFoodNum());
+		fxtimeView.getItems().remove(dtorm.getFoodTime());
 		setListView();
 		
 		
@@ -171,8 +184,8 @@ public class FoodListController implements Initializable{
 	public void fxCan() { //뒤로가기
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
-		MainFunction_Controller mc = new MainFunction_Controller();
-		mc.cold_Storage();
+		//MainFunction_Controller mc = new MainFunction_Controller();
+		//mc.cold_Storage();
 
 	}
 	public String getComboBox() {

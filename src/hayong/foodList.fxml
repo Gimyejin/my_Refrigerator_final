@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hayong.FoodListController">
+<AnchorPane fx:id="pane" prefHeight="469.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hayong.FoodListController">
    <children>
-      <Label fx:id="fxname" layoutX="128.0" layoutY="21.0" prefHeight="21.0" prefWidth="155.0" text="  님의 냉장고" textFill="#e84c4c">
+      <Label fx:id="fxname" alignment="CENTER" layoutX="104.0" layoutY="21.0" prefHeight="22.0" prefWidth="205.0" text="  님의 냉장고" textFill="#4d72e3">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </Label>
       <ListView fx:id="fxNameView" layoutX="43.0" layoutY="51.0" prefHeight="225.0" prefWidth="139.0" />

@@ -27,7 +27,6 @@ public static Connection conn;
 	public ArrayList<FoodDTO> DbValue() {
 		
 		ArrayList<FoodDTO> list = new ArrayList<FoodDTO>();
-		list = null;
 		try {
 			String sql = "select * from item_db where id=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -37,7 +36,7 @@ public static Connection conn;
 				while(rs.next()) {
 					FoodDTO dto = new FoodDTO();
 					dto.setFoodName(rs.getString("item_name"));
-					dto.setFoodNum(String.valueOf("item_count"));
+					dto.setFoodNum(rs.getString(String.valueOf("item_count")));
 					dto.setFoodTime(rs.getString("item_add_date"));
 					list.add(dto);
 				}
@@ -49,7 +48,7 @@ public static Connection conn;
 	
 	public int insert(FoodDTO dto) {
 		int result=0;
-		try {
+		/*try {
 			String sql2 = "insert into item values (?,?)";
 			PreparedStatement ps2 = conn.prepareStatement(sql2);
 			ps2.setString(1, LoginServiceImpl.staticid);
@@ -57,7 +56,7 @@ public static Connection conn;
 			result= ps2.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		try {
 			String sql = "insert into item_db values (?,?,?,?,?)";
@@ -102,7 +101,7 @@ public static Connection conn;
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		try {
+		/*try {
 			String sql2 = "delete item where id=? and item_name=?";
 			PreparedStatement ps2 = conn.prepareStatement(sql2);
 			ps2.setString(1, LoginServiceImpl.staticid);
@@ -110,7 +109,7 @@ public static Connection conn;
 			result = ps2.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
-		} 
+		} */
 		return result;
 	}
 
