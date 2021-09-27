@@ -136,7 +136,7 @@ public class shelfLifeController {
 
 			System.out.println("품목 " + item.get((int) newValue).getItemName().getValue());
 			System.out.println("유통기한 " + item.get((int) newValue).getLifeTime().getValue());
-
+			 
 			itemN = item.get((int) newValue).getItemName().getValue();
 			itemT = item.get((int) newValue).getLifeTime().getValue();
 		});
