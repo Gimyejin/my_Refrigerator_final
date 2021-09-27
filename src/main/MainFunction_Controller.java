@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
+import nayoung.memoList.MemoListProc;
 import nayoung.temp.TempProc;
 
 import geonhwe.Login.LoginService;
@@ -30,7 +31,7 @@ public class MainFunction_Controller implements Initializable{
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
-	MemoProc mc;
+	MemoListProc mlc;
 	TempProc tc;
 
 	public void setRoot(Parent root) {
@@ -42,7 +43,7 @@ public class MainFunction_Controller implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		ms = new MemberServiceImpl();
-		mc = new MemoProc();
+		mlc = new MemoListProc();
 		tc = new TempProc();
 
 	}
@@ -59,7 +60,7 @@ public class MainFunction_Controller implements Initializable{
 
 	
 	public void btnMemo() {
-		mc.memo();
+		mlc.memolist();
 	}
 	
 	public void btnTemp() {

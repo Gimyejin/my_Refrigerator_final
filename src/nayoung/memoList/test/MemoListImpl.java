@@ -1,12 +1,12 @@
-package nayoung.memo;
+package nayoung.memoList.test;
 
 import javafx.scene.Parent;
 
-public class MemoImpl implements Memo{
+public class MemoListImpl implements MemoList{
 	Parent root;
 	@Override
-	public void memoProc() {
-			
+	public void memoListProc() {
+		
 	}
 
 	@Override
@@ -14,5 +14,4 @@ public class MemoImpl implements Memo{
 		this.root = root;
 	}
 
-	
 }
