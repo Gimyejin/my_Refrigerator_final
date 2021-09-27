@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
@@ -24,11 +23,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
+import yegin.common.Method;
 import yegin.shelf_life.shelfLifeController;
 
-
-
-public class MainFunction_Controller implements Initializable{
+public class MainFunction_Controller implements Initializable {
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
@@ -61,16 +59,13 @@ public class MainFunction_Controller implements Initializable{
 		ms.memberCancle();
 	}
 
-	
 	public void btnMemo() {
 		mc.memo();
 	}
-	
+
 	public void btnTemp() {
 		tc.temp();
 	}
-
-
 
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
@@ -89,11 +84,13 @@ public class MainFunction_Controller implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 		stage.setScene(sc);
 		stage.show();
 	}
@@ -118,9 +115,10 @@ public class MainFunction_Controller implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
@@ -137,10 +135,17 @@ public class MainFunction_Controller implements Initializable{
 	}
 	public void food() {
 		System.out.println("관리로이동");
-		hy.foodScene();
+		hy.foodScene();	
+	}
 
-		
+	public void back() {
+		Method mt = new Method();
+		if (newRoot == null) {
+			mt.mfc((Stage) root.getScene().getWindow(), "/main/menu.fxml");
+		} else {
+			mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/menu.fxml");
+		}
+
 	}
 
 }
-

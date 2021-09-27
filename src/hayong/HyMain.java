@@ -33,7 +33,10 @@ public class HyMain{
 	} 
 
 /*	@Override
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 		public void start(Stage primaryStage) throws Exception {
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("foodList.fxml"));
@@ -48,14 +51,11 @@ public class HyMain{
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}
-
 		public static void main(String[] args) {
 			launch(args);
-
 		}*/
 
 		}
-
 
 
 

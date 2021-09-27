@@ -10,5 +10,6 @@
       <Text layoutX="81.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="냉장 기능 페이지입니다(추후 삭제)" />
       <Button layoutX="112.0" layoutY="329.0" mnemonicParsing="false" text="내용물 list확인 버튼" />
       <Button layoutX="93.0" layoutY="395.0" mnemonicParsing="false" onAction="#shelfLife" text="유통기한 전체관리 페이지 버튼" />
+      <Button layoutX="277.0" layoutY="77.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
    </children>
 </AnchorPane>
