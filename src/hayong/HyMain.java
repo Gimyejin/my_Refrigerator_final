@@ -18,6 +18,7 @@ public class HyMain{
 					new FXMLLoader(getClass().getResource("foodList.fxml"));
 			root = loader.load();
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("design.css").toString());
 			
 			FoodListController ctl = loader.getController();
 			ctl.setRoot(root);
@@ -31,14 +32,14 @@ public class HyMain{
 
 	} 
 
-	/*	@Override
-
+/*	@Override
 		public void start(Stage primaryStage) throws Exception {
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("foodList.fxml"));
 			
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("design.css").toString());
 			
 			FoodListController ctl = loader.getController();
 			ctl.setRoot(root);
@@ -46,14 +47,11 @@ public class HyMain{
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}
-
 		public static void main(String[] args) {
 			launch(args);
-
 		}*/
 
 		}
-
 
 
 

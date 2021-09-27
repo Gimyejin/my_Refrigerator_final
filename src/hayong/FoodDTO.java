@@ -5,8 +5,6 @@ public class FoodDTO {
 	private String foodNum;
 	private String foodTime;
 	private String oldName;
-	private String shelfLife;
-	
 	public String getOldName() {
 		return oldName;
 	}
@@ -32,10 +30,4 @@ public class FoodDTO {
 		this.foodTime = foodTime;
 	}
 	
-	public String getShelfLife() {
-		return shelfLife;
-	}
-	public void setShelfLife(String shelfLife) {
-		this.shelfLife = shelfLife;
-	}
 }

@@ -32,13 +32,14 @@ public static Connection conn;
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, LoginServiceImpl.staticid);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				FoodDTO dto = new FoodDTO();
-				dto.setFoodName(rs.getString("item_name"));
-				dto.setFoodNum(String.valueOf(rs.getInt("item_count")));
-				dto.setFoodTime(rs.getString("item_add_date"));
-				dto.setShelfLife(rs.getString("item_date"));
-				list.add(dto);
+			if(rs!=null) {
+				while(rs.next()) {
+					FoodDTO dto = new FoodDTO();
+					dto.setFoodName(rs.getString("item_name"));
+					dto.setFoodNum(rs.getString(String.valueOf("item_count")));
+					dto.setFoodTime(rs.getString("item_add_date"));
+					list.add(dto);
+				}
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -47,14 +48,24 @@ public static Connection conn;
 	
 	public int insert(FoodDTO dto) {
 		int result=0;
+		/*try {
+			String sql2 = "insert into item values (?,?)";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setString(1, LoginServiceImpl.staticid);
+			ps2.setString(2, dto.getFoodName());
+			result= ps2.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		
 		try {
 			String sql = "insert into item_db values (?,?,?,?,?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);		
 			ps.setString(1, LoginServiceImpl.staticid);
 			ps.setString(2, dto.getFoodName());
 			ps.setString(3, dto.getFoodTime());
 			ps.setInt(4, Integer.parseInt(dto.getFoodNum()));
-			ps.setString(5, dto.getShelfLife());
+			ps.setString(5, null);
 		
 			result = ps.executeUpdate();
 		}catch (Exception e) {
@@ -82,19 +93,29 @@ public static Connection conn;
 	public int remove(FoodDTO dto) {
 		int result=0;
 		try {
-			String sql = "delete item_db where id=? and item_name=? and item_date=?";
+			String sql = "delete item_db where id=? and item_name=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, LoginServiceImpl.staticid);
 			ps.setString(2, dto.getFoodName());
-			ps.setString(3, dto.getShelfLife());
 			result = ps.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
+		/*try {
+			String sql2 = "delete item where id=? and item_name=?";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setString(1, LoginServiceImpl.staticid);
+			ps2.setString(2, dto.getFoodName());
+			result = ps2.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} */
 		return result;
 	}
 
 }
+
+
 
 
 
