@@ -56,7 +56,6 @@ public class shelfLifeController {
 		this.newRoot = newRoot;
 		fxListview = (ListView) newRoot.lookup("#viewList");
 		fxListview1 = (ListView) newRoot.lookup("#viewList1");
-
 		setList();
 	}
 
@@ -108,6 +107,7 @@ public class shelfLifeController {
 
 	private void setList() {
 		System.out.println("list까지옴");
+		
 		listView = FXCollections.observableArrayList();
 		listView1 = FXCollections.observableArrayList();
 		// 품목명과 유통기한을 합침
@@ -162,6 +162,7 @@ public class shelfLifeController {
 			shelfLifeController ctl = loader.getController();
 			ctl.setRoot3(otherRoot);
 			ctl.setItems(itemN, itemT);
+			ctl.setRoot2(newRoot);
 
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -182,7 +183,7 @@ public class shelfLifeController {
 			if (result == 1) {
 				ac.atler("유통기한 수정이 완료되었습니다.", "수정");
 				close();
-				//setList();
+				setList();
 			} else {
 				ac.atler("유통기한 수정이 실패하였습니다.", "수정");
 			}
@@ -193,6 +194,8 @@ public class shelfLifeController {
 		System.out.println("닫힘");
 		Stage stage = (Stage) otherRoot.getScene().getWindow();
 		stage.close();
+		setRoot2(newRoot);
+		setList();
 	}
 
 	public void shelfLifeComboBox() {// 유통기한
