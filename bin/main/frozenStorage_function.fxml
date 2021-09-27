@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
       <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="냉동기능 페이지입니다(추후삭제)" />
-      <Button layoutX="115.0" layoutY="82.0" mnemonicParsing="false" text="장보기 페이지 버튼" />
+      <Button layoutX="115.0" layoutY="82.0" mnemonicParsing="false" text="회원 수정" />
       <Button layoutX="127.0" layoutY="142.0" mnemonicParsing="false" onAction="#alert" text="알림 설정 버튼" />
        <Button layoutX="277.0" layoutY="77.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
    </children>
