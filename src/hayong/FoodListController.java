@@ -43,6 +43,7 @@ public class FoodListController implements Initializable{
 
 	public void setRoot(Parent root) {
 		System.out.println("깃실험1");
+		System.out.println("이제 다운받아보자");
 		this.root = root;
 		fxNameView = (ListView)root.lookup("#fxNameView");
 		fxcntView = (ListView)root.lookup("#fxcntView");
