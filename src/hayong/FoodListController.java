@@ -223,7 +223,7 @@ public class FoodListController implements Initializable {
 			}
 
 			day.setOnAction(a -> {
-				 shelfday = year.getValue() +"년"+ month.getValue() + "월"+day.getValue()+"일";
+				 shelfday = year.getValue() +"년 "+ month.getValue() + "월 "+day.getValue()+"일";
 				System.out.println(shelfday);
 			});
 

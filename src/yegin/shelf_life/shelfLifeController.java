@@ -34,6 +34,8 @@ public class shelfLifeController {
 	Parent otherRoot;
 	ListView<String> fxListview;// 품목 명
 	ListView<String> fxListview1;// 유통기한
+	Label itemName;
+	Label old_time;
 	ObservableList<String> listView;
 	ObservableList<String> listView1;
 	ObservableList<Time> item;
@@ -42,7 +44,7 @@ public class shelfLifeController {
 	String shelfday;
 	ShelfLife_Method sm;
 	AlertController ac;
-
+	shelfLifeController ctl;
 	String itemN, itemT;
 
 	public void setRoot(Parent root) {// 밖에서 이걸 건드림
@@ -63,12 +65,17 @@ public class shelfLifeController {
 		shelfLifeComboBox();
 		sm = new ShelfLife_Method();
 		ac = new AlertController();
+		itemName = (Label) otherRoot.lookup("#itemName");
+		old_time = (Label) otherRoot.lookup("#old_time");
 
 	}
-	
+
 	private void setItems(String itemN, String itemT) {
-		this.itemN=itemN;
-		this.itemT=itemT;
+		this.itemN = itemN;
+		this.itemT = itemT;
+
+		itemName.setText(itemN);
+		old_time.setText(itemT);
 	}
 
 	public void shelfLifeList() {
@@ -116,6 +123,7 @@ public class shelfLifeController {
 			item.add(t);
 			// System.out.println(listView);
 		}
+		// System.out.println(listView);
 		fxListview.setItems(listView);
 		fxListview1.setItems(listView1);
 
@@ -125,25 +133,13 @@ public class shelfLifeController {
 
 			System.out.println("newValue(현재값)" + newValue);
 			System.out.println(listView1.get((int) newValue));
-			//chlick(newValue, listView1.get((int) newValue));// 현재index와 현재 값
+
 			System.out.println("품목 " + item.get((int) newValue).getItemName().getValue());
 			System.out.println("유통기한 " + item.get((int) newValue).getLifeTime().getValue());
 
 			itemN = item.get((int) newValue).getItemName().getValue();
 			itemT = item.get((int) newValue).getLifeTime().getValue();
-
-			
 		});
-
-		/*
-		 * fxListview1.setOnMouseClicked(new EventHandler<MouseEvent>() {
-		 * 
-		 * @Override public void handle(MouseEvent arg0) { chlick();
-		 * 
-		 * }
-		 * 
-		 * });
-		 */
 
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -164,43 +160,37 @@ public class shelfLifeController {
 			Scene scene = new Scene(otherRoot);
 
 			shelfLifeController ctl = loader.getController();
-			System.out.println("oterroot" + otherRoot);
 			ctl.setRoot3(otherRoot);
 			ctl.setItems(itemN, itemT);
-			
+
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
-
-		/*
-		 * fxListview.getSelectionModel().selectedIndexProperty().addListener(new
-		 * ChangeListener() { public void changed(ObservableValue observable, Object
-		 * oldVal, Object newVal) { // 수행할 처리 }
-		 * 
-		 * ShelfLife_Method sm = new ShelfLife_Method();
-		 * 
-		 * //sm.update(list); } });
-		 */
 	}
 
-	public void change() {// 수정시켜야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		FoodDTO dto = new FoodDTO();
-		dto.setShelfLife(shelfday);
-		int result = sm.update(dto);
-		if (result == 1) {
-			ac.atler("성공", "수정");
+	public void change() {
+		if (shelfday==null) {
+			ac.atler("유통기한을 입력하세요.", "수정");
 		} else {
-			ac.atler("실패", "수정");
-
+			FoodDTO dto = new FoodDTO();
+			dto.setShelfLife(itemT);
+			dto.setFoodName(itemN);
+			int result = sm.update(shelfday, dto);
+			if (result == 1) {
+				ac.atler("유통기한 수정이 완료되었습니다.", "수정");
+				close();
+				setList();
+			} else {
+				ac.atler("유통기한 수정이 실패하였습니다.", "수정");
+			}
 		}
 	}
 
 	public void close() {
-		System.out.println("눌림");
+		System.out.println("닫힘");
 		Stage stage = (Stage) otherRoot.getScene().getWindow();
 		stage.close();
 	}
@@ -242,14 +232,10 @@ public class shelfLifeController {
 			}
 
 			day.setOnAction(a -> {
-				shelfday = year.getValue() + "년" + month.getValue() + "월" + day.getValue() + "일";
-				System.out.println(shelfday);
+				shelfday = year.getValue() + "년 " + month.getValue() + "월 " + day.getValue() + "일";
+				System.out.println("수정된 유통기한 체크: " + shelfday);
 			});
 
 		});
 	}
-
-	/*public void chlick(Number newValue2, String time) {
-		System.out.println(newValue2 + " " + time);
-	}*/
 }

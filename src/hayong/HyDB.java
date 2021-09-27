@@ -82,10 +82,11 @@ public static Connection conn;
 	public int remove(FoodDTO dto) {
 		int result=0;
 		try {
-			String sql = "delete item_db where id=? and item_name=?";
+			String sql = "delete item_db where id=? and item_name=? and item_date=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, LoginServiceImpl.staticid);
 			ps.setString(2, dto.getFoodName());
+			ps.setString(3, dto.getShelfLife());
 			result = ps.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
