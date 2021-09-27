@@ -1,0 +1,25 @@
+.root {
+	-fx-background-image: url("hyimg.png");
+}
+
+.label {
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #333333;
+	-fx-effect: dropshadow(gaussian, red, 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+
+.button {
+	-fx-text-fill: white;
+	-fx-font-family: "Arial_Narrow";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(greenyellow, limegreen);
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+
+.button-blue {
+	-fx-background-color: #7CAFC2;
+	-fx-text-fill: #FFFFFF;
+	-fx-background-radius: 4;
+}
