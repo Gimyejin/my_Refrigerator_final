@@ -23,12 +23,3 @@
 	-fx-text-fill: #FFFFFF;
 	-fx-background-radius: 4;
 }
-<<<<<<< HEAD
-#list {
-	-fx-font-size: 32px;
-	-fx-font-family: "Arial_Black";
-	-fx-fill: #818181;
-	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-}
-=======
->>>>>>> master

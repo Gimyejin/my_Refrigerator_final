@@ -13,10 +13,7 @@
       <Button fx:id="btnMemo" layoutX="220.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnMemo" prefHeight="63.0" prefWidth="92.0" text="메모" />
       <Button layoutX="68.0" layoutY="310.0" mnemonicParsing="false" onAction="#cold_Storage" prefHeight="194.0" prefWidth="214.0" text="냉장" />
       <Button fx:id="btnTemp" layoutX="216.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnTemp" prefHeight="53.0" prefWidth="100.0" text="온도" />
-<<<<<<< HEAD
-=======
       
->>>>>>> master
    </children>
 </AnchorPane>
 
