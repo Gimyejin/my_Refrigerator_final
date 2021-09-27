@@ -35,10 +35,11 @@ public class FoodListController implements Initializable{
 	ListView<String> fxtimeView;
 	ArrayList<FoodDTO> dtolist;
 	AnchorPane pane;
-	ObservableList<String> NameString,timeString, cntString;
+	ObservableList<String> NameString,timeString, cntString, lifeString;
 	HyDB hb;
-	MainFunction_Controller mc;
 	Button btnmod, btnrm;
+	ComboBox<String> year, month, day;
+	String shelfday;
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -46,6 +47,7 @@ public class FoodListController implements Initializable{
 		fxcntView = (ListView)root.lookup("#fxcntView");
 		fxtimeView = (ListView)root.lookup("#fxtimeView");
 		addComboBox();
+		shelfLifeComboBox();
 		Label fxname = (Label)root.lookup("#fxname");
 		fxname.setText(LoginServiceImpl.staticid+" 님의 냉장고");
 		setListView();
@@ -80,6 +82,7 @@ public class FoodListController implements Initializable{
 		NameString = FXCollections.observableArrayList();
 		cntString = FXCollections.observableArrayList();
 		timeString = FXCollections.observableArrayList();
+		lifeString = FXCollections.observableArrayList();
 		NameString.add("음식");
 		cntString.add("수량");
 		timeString.add("추가날짜");
@@ -95,6 +98,7 @@ public class FoodListController implements Initializable{
 				NameString.add(list.get(i).getFoodName());
 				cntString.add(list.get(i).getFoodNum());
 				timeString.add(list.get(i).getFoodTime());
+				lifeString.add(list.get(i).getOldName());
 			}
 		} 
 			fxNameView.setItems(NameString);
@@ -116,6 +120,7 @@ public class FoodListController implements Initializable{
 		}
 		dto.setFoodName(food.getText());
 		dto.setFoodNum(getComboBox());
+		dto.setShelfLife(shelfday);
 		Date date = new Date(); 
 		SimpleDateFormat s = new SimpleDateFormat("MM월 dd일 aa hh시"); //현재시간
 		String str = s.format(date);
@@ -207,11 +212,55 @@ public class FoodListController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		hb = new HyDB();
-		mc = new MainFunction_Controller();
 		
 	}
+	
+	public void shelfLifeComboBox() {// 유통기한
+		ComboBox<String> year = (ComboBox<String>) root.lookup("#year");
+		if (year != null) {
+			year.getItems().addAll("2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030");
+		}
+		ComboBox<String> month = (ComboBox<String>) root.lookup("#month");
+		if (month != null) {
+			month.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+		}
+
+		ComboBox<String> day = (ComboBox<String>) root.lookup("#day");
+		ArrayList<String> allDay = new ArrayList<String>();
+
+		month.setOnAction(e -> {
+			System.out.println(month.getValue());
+			day.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09");
+			if (month.getValue() == "01" || month.getValue() == "03" || month.getValue() == "05"
+					|| month.getValue() == "07" || month.getValue() == "08" || month.getValue() == "10"
+					|| month.getValue() == "12") {
+
+				for (int i = 10; i < 32; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			} else if (month.getValue() == "02") {
+				for (int i = 10; i < 29; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			} else {
+				for (int i = 10; i < 31; i++) {
+					allDay.add(Integer.toString(i));
+				}
+			}
+			for (String chday : allDay) {
+				day.getItems().add(chday);
+			}
+
+			day.setOnAction(a -> {
+				 shelfday = year.getValue() +"년 "+ month.getValue() + "월 "+day.getValue()+"일";
+				System.out.println(shelfday);
+			});
+
+		});
+	}
+}	
 
 
-}
+
 
 
