@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
@@ -20,7 +21,7 @@ public class MemberChange {
 	Label id;
 	Label name;
 	TextField pw1;
-	TextField pw2;
+	PasswordField pw2;
 	ShelfLife_Method sm;
 	MemberDTO dto;
 	public void setRoot(Parent root) {
@@ -34,7 +35,7 @@ public class MemberChange {
 		name = (Label) newRoot.lookup("#name");
 
 		pw1 = (TextField) newRoot.lookup("#pw1");
-		pw2 = (TextField) newRoot.lookup("#pw2");
+		pw2 = (PasswordField) newRoot.lookup("#pw2");
 		labelView();
 	}
 

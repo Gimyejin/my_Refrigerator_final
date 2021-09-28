@@ -44,7 +44,6 @@ public class ShelfLife_Method {
 	}
 	
 	public MemberDTO loginChk(String inputId) {
-
 		String sql = "select * from team_project where id=?";
 		MemberDTO dto = null; 
 		try {
@@ -61,6 +60,20 @@ public class ShelfLife_Method {
 			e.printStackTrace();
 		}
 		return dto; 
+	}
+	
+	public int memberDel() {
+		int result=0;
+		String sql="delete from team_project where id=?";
+		MemberDTO dto = null; 
+		try {
+			PreparedStatement ps = GeonhweDB.conn.prepareStatement(sql);
+			ps.setString(1, LoginServiceImpl.staticid); 
+			result = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result; 
 	}
 }
 
