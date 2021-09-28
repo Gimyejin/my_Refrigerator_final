@@ -4,11 +4,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+<<<<<<< HEAD
 
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
 import nayoung.memoList.MemoListProc;
+=======
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import nayoung.memo.MemoProc;
+>>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
 import nayoung.temp.TempProc;
 
 import geonhwe.Login.LoginService;
@@ -16,6 +22,11 @@ import geonhwe.Login.LoginServiceImpl;
 
 import geonhwe.member.MemberService;
 import geonhwe.member.MemberServiceImpl;
+<<<<<<< HEAD
+=======
+import hayong.FoodListController;
+import hayong.HyMain;
+>>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
 import javafx.fxml.FXMLLoader;
 
 import javafx.fxml.Initializable;
@@ -23,6 +34,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
+<<<<<<< HEAD
 import yegin.shelf_life.shelfLifeController;
 
 
@@ -33,6 +45,17 @@ public class MainFunction_Controller implements Initializable{
 	MemberService ms;
 	MemoListProc mlc;
 	TempProc tc;
+=======
+import yegin.common.Method;
+import yegin.shelf_life.shelfLifeController;
+
+public class MainFunction_Controller implements Initializable {
+	Parent root;
+	Parent newRoot;
+	MemberService ms;
+	MemoProc mc;
+	TempProc tc;
+	hayong.HyMain hy;
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -45,6 +68,9 @@ public class MainFunction_Controller implements Initializable{
 		ms = new MemberServiceImpl();
 		mlc = new MemoListProc();
 		tc = new TempProc();
+		mc = new MemoProc();
+		tc = new TempProc();
+		hy = new HyMain();
 
 	}
 
@@ -58,15 +84,17 @@ public class MainFunction_Controller implements Initializable{
 		ms.memberCancle();
 	}
 
-	
 	public void btnMemo() {
 		mlc.memolist();
 	}
-	
+
+	public void btnMemo() {
+		mc.memo();
+	}
+
 	public void btnTemp() {
 		tc.temp();
 	}
-
 
 
 	public void setRoot2(Parent root) {
@@ -86,11 +114,14 @@ public class MainFunction_Controller implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
+
 		stage.setScene(sc);
 		stage.show();
 	}
@@ -115,8 +146,10 @@ public class MainFunction_Controller implements Initializable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
@@ -130,6 +163,23 @@ public class MainFunction_Controller implements Initializable{
 		System.out.println(newRoot);
 		sc.setRoot(newRoot);
 		sc.shelfLifeList();
+
+	}
+
+}
+
+	public void food() {
+		System.out.println("관리로이동");
+		hy.foodScene();	
+	}
+
+	public void back() {
+		Method mt = new Method();
+		if (newRoot == null) {
+			mt.mfc((Stage) root.getScene().getWindow(), "/main/menu.fxml");
+		} else {
+			mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/menu.fxml");
+		}
 
 	}
 

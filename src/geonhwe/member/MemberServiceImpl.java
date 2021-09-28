@@ -15,6 +15,7 @@ import geonhwe.db.teamproject;
 
 public class MemberServiceImpl implements MemberService{
 	Parent root;
+	Parent memberRoot;
 	teamproject tpj = new teamproject();
 
 	public void memberCancle() {
@@ -43,10 +44,25 @@ public class MemberServiceImpl implements MemberService{
 		// = 하나는 저장, == 앞과 뒤가 같은지 확인하는 용도 / 오른쪽의 값을 좌측에 넣겠다.
 
 		int result = tpj.insert(dto);
+		MemberDTO ggdto = tpj.loginChk(id.getId());
 		
-		if(result == 0) { alertMethod("실패입니다.");
+		if(result == 0) { 
+		//alertMethod("회원가입 불가능!");
+		alertMethod("이미 가입된 아이디입니다.");
 		}else if(result == 1) {
-			alertMethod("성공입니다.");
+			System.out.println("회원가입 가능!");
+			if(ggdto.getId().equals(id.getId())) {
+				alertMethod("회원가입이 되었습니다.");
+				Stage stage = (Stage)root.getScene().getWindow();
+				stage.close();
+				
+				result = 1;
+				
+				MemberController mmc = new MemberController();
+				mmc.setRoot(memberRoot);
+				
+			}
+
 		}
 		
 		System.out.println(dto.getId()); // set = 넣다 get = 꺼내다
@@ -61,5 +77,6 @@ public class MemberServiceImpl implements MemberService{
 
 // 그 fxid를 설정을 하고나서 이제 찾을 때 #memberid로
 // 한 .. 60%넘게 이해한거같습니다
+
 //lookup 찾다/ "#~~~"를 텍스트필드를갑 줄건데 id라는 변수에 담는다
 // ((TextField)root.lookup("#fxId")) 이 값만 가지고 내용을 찾을거다

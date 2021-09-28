@@ -16,6 +16,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+<<<<<<< HEAD
+=======
+import yegin.css.Design;
+>>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
 
 public class LoginButton_Controller implements Initializable {
 	Parent root;
@@ -28,6 +32,9 @@ public class LoginButton_Controller implements Initializable {
 		/*
 		 * lp = new LoginProc(); mp = new MemberProc();
 		 */
+		Design design = new Design();
+		design.setRoot(root);
+		design.log();
 	}
 
 	public void btnLogin() {
@@ -62,7 +69,9 @@ public class LoginButton_Controller implements Initializable {
 		} catch (IOException e) { // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		sc = new Scene(newRoot);//여기서 에러남
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 
 		// scene만 바꿔치기
 		Stage stage = (Stage) root.getScene().getWindow();
@@ -74,10 +83,7 @@ public class LoginButton_Controller implements Initializable {
 		stage.show();
 
 	}
-	
-	
-	
-	
+
 
 //	public void login() {
 //		System.out.println("메뉴페이지로 넘어감");

@@ -6,7 +6,7 @@ public class MemoImpl implements Memo{
 	Parent root;
 	@Override
 	public void memoProc() {
-			
+
 	}
 
 	@Override
