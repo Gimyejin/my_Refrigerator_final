@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.fxml.FXMLLoader;
 
 import geonhwe.Login.LoginProc;
@@ -16,10 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-<<<<<<< HEAD
-=======
+
 import yegin.css.Design;
->>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
 
 public class LoginButton_Controller implements Initializable {
 	Parent root;

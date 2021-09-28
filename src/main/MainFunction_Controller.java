@@ -4,17 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-<<<<<<< HEAD
-
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
 import nayoung.memoList.MemoListProc;
-=======
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import nayoung.memo.MemoProc;
->>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
 import nayoung.temp.TempProc;
 
 import geonhwe.Login.LoginService;
@@ -22,38 +15,25 @@ import geonhwe.Login.LoginServiceImpl;
 
 import geonhwe.member.MemberService;
 import geonhwe.member.MemberServiceImpl;
-<<<<<<< HEAD
-=======
+
 import hayong.FoodListController;
 import hayong.HyMain;
->>>>>>> 57315f9ffda165975d9253d6eec9b17b70c339fe
-import javafx.fxml.FXMLLoader;
 
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
-<<<<<<< HEAD
+
 import yegin.shelf_life.shelfLifeController;
-
-
-
-public class MainFunction_Controller implements Initializable{
-	Parent root;
-	Parent newRoot;
-	MemberService ms;
-	MemoListProc mlc;
-	TempProc tc;
-=======
 import yegin.common.Method;
 import yegin.shelf_life.shelfLifeController;
+
 
 public class MainFunction_Controller implements Initializable {
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
-	MemoProc mc;
+	MemoListProc mlc;
 	TempProc tc;
 	hayong.HyMain hy;
 
@@ -67,8 +47,6 @@ public class MainFunction_Controller implements Initializable {
 
 		ms = new MemberServiceImpl();
 		mlc = new MemoListProc();
-		tc = new TempProc();
-		mc = new MemoProc();
 		tc = new TempProc();
 		hy = new HyMain();
 
@@ -86,10 +64,6 @@ public class MainFunction_Controller implements Initializable {
 
 	public void btnMemo() {
 		mlc.memolist();
-	}
-
-	public void btnMemo() {
-		mc.memo();
 	}
 
 	public void btnTemp() {
@@ -165,8 +139,6 @@ public class MainFunction_Controller implements Initializable {
 		sc.shelfLifeList();
 
 	}
-
-}
 
 	public void food() {
 		System.out.println("관리로이동");

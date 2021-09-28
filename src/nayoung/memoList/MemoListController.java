@@ -160,18 +160,24 @@ public class MemoListController implements Initializable{
 			AppUtil.alert("삭제할 항목을 선택하세요", "에러");
 		}
 	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	public void seeList() {
-		int idx = list.getSelectionModel().getSelectedIndex();
-		if(idx >= 0) {
-//			TextFlow textFlow;
-//			textFlow.getChildren().add();
-			
-
-			
-		}else {
-			AppUtil.alert("항목을 선택하세요", "에러");
-		}
+//		int idx = list.getSelectionModel().getSelectedIndex();
+//		if(idx >= 0) {
+////			TextFlow textFlow;
+////			textFlow.getChildren().add();
+//			
+//
+//			
+//		}else {
+//			AppUtil.alert("항목을 선택하세요", "에러");
+//		}
 	}
 	
 //
@@ -216,3 +222,4 @@ public class MemoListController implements Initializable{
 //    }
 //
 //}
+}
