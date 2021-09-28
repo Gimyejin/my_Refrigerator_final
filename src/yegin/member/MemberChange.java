@@ -2,6 +2,8 @@ package yegin.member;
 
 import java.io.IOException;
 
+import geonhwe.Login.LoginServiceImpl;
+import geonhwe.member.MemberDTO;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
 import yegin.common.Method;
+import yegin.shelf_life.ShelfLife_Method;
 
 public class MemberChange {
 	Parent root;
@@ -18,14 +21,21 @@ public class MemberChange {
 	Label name;
 	TextField pw1;
 	TextField pw2;
-
+	ShelfLife_Method sm;
+	MemberDTO dto;
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
 
 	private void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;
-		id = (Label)newRoot.lookup("#id");
+		sm = new ShelfLife_Method();
+		id = (Label) newRoot.lookup("#id");
+		name = (Label) newRoot.lookup("#name");
+
+		pw1 = (TextField) newRoot.lookup("#pw1");
+		pw2 = (TextField) newRoot.lookup("#pw2");
+		labelView();
 	}
 
 	public void change() {
@@ -53,15 +63,35 @@ public class MemberChange {
 		stage.show();
 	}
 
-	public void ok() {
-		
+	public void labelView() {
+		id.setText(LoginServiceImpl.staticid);
+		name.setText(sm.loginChk(LoginServiceImpl.staticid).getName());
 	}
+	public void ok() {
+		System.out.println("눌림");
+		if (pw1.getText().equals(pw2.getText())) {
+			 dto = new MemberDTO();
+			dto.setId(id.getText());
+			dto.setName(name.getText());
+			dto.setPwd(pw1.getText());
+			int result = sm.updatePw(dto);
+			if (result == 1) {
+				AlertController.atler("패스워드가 수정되었습니다", "회원정보");
+			} else {
+				AlertController.atler("패스워드가 수정이 실패하였습니다.", "회원정보");
+			}
+		}
+		else {
+			AlertController.atler("서로 다른 암호입니다.\n 다시 확인해주세요", "회원정보");
+		}
+	}
+
 	public void back() {
 		System.out.println("root값(이전페이지 루트임) " + root);
 		System.out.println("newroot값" + newRoot);
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(),"/main/frozenStorage_function.fxml");
-		
+		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
+
 		System.out.println("뒤로가기");
 	}
 }
