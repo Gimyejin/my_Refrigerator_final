@@ -9,7 +9,6 @@
 	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 	-fx-background-repeat: no-repeat;
 }
-
 .button {
 	-fx-text-fill: white;
 	-fx-font-family: "Arial_Narrow";
@@ -29,10 +28,4 @@
 	-fx-font-family: "Arial_Black";
 	-fx-fill: #818181;
 	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-}
-#buttonWithImage {          
-    -fx-graphic: url("/yegin/resources/arrow.png");
-    -fx-background-size: 30px;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 90%;
 }
