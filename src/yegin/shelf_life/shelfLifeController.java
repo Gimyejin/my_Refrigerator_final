@@ -19,6 +19,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
@@ -27,7 +28,7 @@ import main.MainFunction_Controller;
 import yegin.alert.AlertController;
 import yegin.common.Method;
 
-public class shelfLifeController {
+public class shelfLifeController  extends BorderPane{
 	// 클릭시 해당 리스트로 넘어가기?
 	Parent root;
 	Parent newRoot;
@@ -46,7 +47,7 @@ public class shelfLifeController {
 	AlertController ac;
 	shelfLifeController ctl;
 	String itemN, itemT;
-
+	
 	public void setRoot(Parent root) {// 밖에서 이걸 건드림
 		this.root = root;
 
