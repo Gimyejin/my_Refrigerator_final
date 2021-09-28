@@ -259,8 +259,3 @@ public class FoodListController implements Initializable{
 		});
 	}
 }	
-
-
-
-
-

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.fxml.FXMLLoader;
 
 import geonhwe.Login.LoginProc;
@@ -16,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import yegin.css.Design;
+
 import yegin.css.Design;
 
 public class LoginButton_Controller implements Initializable {
@@ -67,9 +68,11 @@ public class LoginButton_Controller implements Initializable {
 		} catch (IOException e) { // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		sc = new Scene(newRoot);
 		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
 		
+
 		// scene만 바꿔치기
 		Stage stage = (Stage) root.getScene().getWindow();
 
@@ -80,5 +83,4 @@ public class LoginButton_Controller implements Initializable {
 		stage.show();
 
 	}
-
 }

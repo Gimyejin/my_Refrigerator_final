@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import nayoung.memo.MemoProc;
+import nayoung.memoList.MemoListProc;
 import nayoung.temp.TempProc;
 
 import geonhwe.Login.LoginService;
@@ -14,15 +15,16 @@ import geonhwe.Login.LoginServiceImpl;
 
 import geonhwe.member.MemberService;
 import geonhwe.member.MemberServiceImpl;
+
 import hayong.FoodListController;
 import hayong.HyMain;
-import javafx.fxml.FXMLLoader;
 
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
+
+import yegin.shelf_life.shelfLifeController;
 import yegin.common.Method;
 import yegin.shelf_life.shelfLifeController;
 
@@ -30,7 +32,7 @@ public class MainFunction_Controller implements Initializable {
 	Parent root;
 	Parent newRoot;
 	MemberService ms;
-	MemoProc mc;
+	MemoListProc mlc;
 	TempProc tc;
 	hayong.HyMain hy;
 
@@ -43,7 +45,7 @@ public class MainFunction_Controller implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		ms = new MemberServiceImpl();
-		mc = new MemoProc();
+		mlc = new MemoListProc();
 		tc = new TempProc();
 		hy = new HyMain();
 
@@ -60,7 +62,7 @@ public class MainFunction_Controller implements Initializable {
 	}
 
 	public void btnMemo() {
-		mc.memo();
+		mlc.memolist();
 	}
 
 	public void btnTemp() {
@@ -84,13 +86,14 @@ public class MainFunction_Controller implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
+
 		stage.setScene(sc);
 		stage.show();
 	}
@@ -115,10 +118,11 @@ public class MainFunction_Controller implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
+
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
 		stage.setScene(sc);
@@ -133,9 +137,10 @@ public class MainFunction_Controller implements Initializable {
 		sc.shelfLifeList();
 
 	}
+
 	public void food() {
 		System.out.println("관리로이동");
-		hy.foodScene();	
+		hy.foodScene();
 	}
 
 	public void back() {

@@ -1,4 +1,4 @@
-package nayoung.memoList;
+package nayoung.memoList.test;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -6,55 +6,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.util.Collection;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.text.TextFlow;
-import nayoung.memo.Memo;
+import nayoung.memoList.AppUtil;
+import nayoung.memoList.ShoppingList;
 import nayoung.memoListDB.SL_DB;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.SelectionMode;
 
-public class MemoListController implements Initializable{
-	Parent root;
-	MemoList ml;
-
-	public void setRoot(Parent root) {
-		this.root = root;
-		ml.setRoot(root);
-	}
-
-	public void memoProc() {
-		System.out.println("장보기 메모 클릭");
-		ml.memoListProc();	
-	}
-	
+public class MainController {
 	@FXML
 	private DatePicker datePicker;
 	@FXML
 	private TextField txtName;
-	@FXML
-	private TextFlow txtflow;
-	
-	@FXML 
-	private Label resultLabel; 
-	
-	private String inputValue;
-
-	
 	
 	@FXML
 	private ListView<ShoppingList> list;
@@ -62,7 +29,7 @@ public class MemoListController implements Initializable{
 	private ObservableList<ShoppingList> items;
 	
 	private SL_DB db;
-	//private Connection conn;
+	private Connection conn;
 	@FXML
 	private void initialize() {
 		items = FXCollections.observableArrayList();
@@ -86,7 +53,7 @@ public class MemoListController implements Initializable{
 				String name = rs.getString("name");
 				LocalDate date = rs.getDate("date").toLocalDate();
 				
-				ShoppingList sl = new ShoppingList(" ",name, date);
+				ShoppingList sl = new ShoppingList("", name, date);
 				items.add(sl);
 			}
 		}catch (Exception e) {
@@ -119,7 +86,7 @@ public class MemoListController implements Initializable{
 			return;
 		}
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO SHOPPINGLIST (LIST, SL_DATE) VALUES( ?, ?)";
+		String sql = "INSERT INTO SHOPPINGLIST ('LIST', 'SL_DATE') VALUES( ?, ?)";
 		
 		//
 		String insertId = null;
@@ -157,30 +124,40 @@ public class MemoListController implements Initializable{
 		if(idx >= 0) {
 			items.remove(idx);
 		}else {
-			AppUtil.alert("삭제할 항목을 선택하세요", "에러");
+			AppUtil.alert("삭제할 아이템을 선택하세요", "에러");
 		}
-	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	public void seeList() {
-//		int idx = list.getSelectionModel().getSelectedIndex();
-//		if(idx >= 0) {
-////			TextFlow textFlow;
-////			textFlow.getChildren().add();
-//			
-//
-//			
-//		}else {
-//			AppUtil.alert("항목을 선택하세요", "에러");
-//		}
+		
 	}
-	
+}
+
 //
+//
+//package nayoung.memoList;
+//
+//import java.net.URL;
+//import java.util.ResourceBundle;
+//
+//import javafx.collections.FXCollections;
+//import javafx.collections.ObservableList;
+//import javafx.event.ActionEvent;
+//import javafx.fxml.FXML;
+//import javafx.fxml.Initializable;
+//import javafx.scene.Parent;
+//import javafx.scene.control.ComboBox;
+//import javafx.scene.control.Label;
+//import javafx.scene.control.ListView;
+//import javafx.scene.control.SelectionMode;
+//
+//public class MemoListController implements Initializable{
+//	Parent root;
+//	MemoList ml;
+//	public void setRoot(Parent root) {
+//		this.root = root;
+//		ml.setRoot(root);
+//	}
 //	
 //	@FXML
 //    public Label  myLabel;
@@ -221,5 +198,6 @@ public class MemoListController implements Initializable{
 //        }
 //    }
 //
+//
+//
 //}
-}
