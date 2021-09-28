@@ -27,6 +27,7 @@ import yegin.alert.AlertController;
 import yegin.shelf_life.shelfLifeController;
 import yegin.common.Method;
 import yegin.member.MemberChange;
+import yegin.member.MemberList;
 import yegin.shelf_life.shelfLifeController;
 
 public class MainFunction_Controller implements Initializable {
@@ -111,6 +112,11 @@ public class MainFunction_Controller implements Initializable {
 		ac.alert();
 	}*/
 
+	public void member() {
+		MemberList ml= new MemberList();
+		ml.setRoot(newRoot);
+		ml.view();
+	}
 	public void cold_Storage() {
 		System.out.println("냉장고 버튼 눌림");
 
