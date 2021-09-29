@@ -48,6 +48,7 @@ public class MemberList {
 
 		design = new Design();
 		design.item(newRoot);
+		
 		hb = new HyDB();
 
 		dto = new MemberDTO();
