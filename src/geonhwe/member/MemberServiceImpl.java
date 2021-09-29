@@ -51,7 +51,7 @@ public class MemberServiceImpl implements MemberService{
       alertMethod("이미 가입된 아이디입니다.");
       }else if(result == 1) {
          System.out.println("회원가입 가능!");
-         if(ggdto.getId().equals(id.getId())) {
+        // if(ggdto.getId().equals(id.getId())) {
             alertMethod("회원가입이 되었습니다.");
             Stage stage = (Stage)root.getScene().getWindow();
             stage.close();
@@ -61,7 +61,7 @@ public class MemberServiceImpl implements MemberService{
             MemberController mmc = new MemberController();
             mmc.setRoot(memberRoot);
             
-         }
+         
 
       }
       
