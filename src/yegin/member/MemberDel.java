@@ -36,7 +36,10 @@ public class MemberDel {
 	public void memberdel() {
 		if(pw1.getText().equals(pw2.getText())) {
 			int result=sm.memberDel();
-			if(result==1)AlertController.atler("[나의 냉장고]를 이용해 주셔서 감사합니다.", "회원 탈퇴");
+			if(result==1) {AlertController.atler("[나의 냉장고]를 이용해 주셔서 감사합니다.", "회원 탈퇴");
+			Stage stage = (Stage)newRoot.getScene().getWindow();
+		     stage.close();
+			}
 			else System.out.println("실패");
 		}else {
 			AlertController.atler("패스워드 확인을 다시 확인해주세요.", "불일치");
