@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberList">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberList">
    <children>
       <Text layoutX="123.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 정보">
          <font>
@@ -21,9 +21,9 @@
       <ListView fx:id="count" layoutX="204.0" layoutY="255.0" prefHeight="200.0" prefWidth="57.0" />
       <ImageView fx:id="item" fitHeight="54.0" fitWidth="94.0" layoutX="88.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="itemcount" fitHeight="39.0" fitWidth="57.0" layoutX="203.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="id" alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="122.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(id)" />
-      <Label fx:id="name" alignment="CENTER" layoutX="167.0" layoutY="150.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(name)" />
-      <ImageView fx:id="fxid" fitHeight="54.0" fitWidth="81.0" layoutX="95.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="fxname" fitHeight="45.0" fitWidth="81.0" layoutX="102.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="id" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="111.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(id)" />
+      <Label fx:id="name" alignment="CENTER" layoutX="173.0" layoutY="163.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(name)" />
+      <ImageView fx:id="fxid" fitHeight="68.0" fitWidth="94.0" layoutX="76.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="fxname" fitHeight="45.0" fitWidth="81.0" layoutX="83.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -69,7 +69,7 @@ public class MemberList {
 		}
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design2.css").toString());// 화면 꾸미기 연결 코드
 
 		MemberList ml = loader.getController();
 		ml.setRoot2(newRoot);
