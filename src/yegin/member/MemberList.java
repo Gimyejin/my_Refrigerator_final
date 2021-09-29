@@ -112,7 +112,7 @@ public class MemberList {
 
 	public void back() {
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
+		mt.mfc3((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
 
 		System.out.println("뒤로가기");
 	}

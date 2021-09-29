@@ -24,6 +24,7 @@ public class MemberChange {
 	PasswordField pw2;
 	ShelfLife_Method sm;
 	MemberDTO dto;
+
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
@@ -68,10 +69,11 @@ public class MemberChange {
 		id.setText(LoginServiceImpl.staticid);
 		name.setText(sm.loginChk(LoginServiceImpl.staticid).getName());
 	}
+
 	public void ok() {
 		System.out.println("눌림");
 		if (pw1.getText().equals(pw2.getText())) {
-			 dto = new MemberDTO();
+			dto = new MemberDTO();
 			dto.setId(id.getText());
 			dto.setName(name.getText());
 			dto.setPwd(pw1.getText());
@@ -81,8 +83,7 @@ public class MemberChange {
 			} else {
 				AlertController.atler("패스워드가 수정이 실패하였습니다.", "회원정보");
 			}
-		}
-		else {
+		} else {
 			AlertController.atler("서로 다른 암호입니다.\n 다시 확인해주세요", "회원정보");
 		}
 	}
@@ -91,7 +92,7 @@ public class MemberChange {
 		System.out.println("root값(이전페이지 루트임) " + root);
 		System.out.println("newroot값" + newRoot);
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
+		mt.mfc3((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
 
 		System.out.println("뒤로가기");
 	}

@@ -154,8 +154,9 @@ public class shelfLifeController  extends BorderPane{
 	public void back() {
 		System.out.println("뒤로 버튼");
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/coldStorage_function.fxml");
-
+		mt.mfc2((Stage) newRoot.getScene().getWindow(), "/main/coldStorage_function.fxml");
+		
+		
 	}
 
 	public void chage() {
