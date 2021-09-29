@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.MainFunction_Controller;
 import yegin.common.Method;
+import yegin.css.Design;
 import yegin.shelf_life.ShelfLife_Method;
 
 public class MemberList {
@@ -30,21 +31,31 @@ public class MemberList {
 	ListView<String> lv;
 	ListView<String> count;
 	Label id,name;
+
 	ShelfLife_Method sm;
 	MemberDTO dto;
 	HyDB hb;
 	teamproject tp;
+
+	Design design;
+
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
+
 	public void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;
-		hb=new HyDB();
+
+		design = new Design();
+		design.item(newRoot);
+		hb = new HyDB();
+
 		dto = new MemberDTO();
 		tp = new teamproject();
 		listView();
-		
+
 	}
+
 	public void view() {
 		System.out.println("회원 정보 버튼 눌림");
 
@@ -65,39 +76,44 @@ public class MemberList {
 		stage.setScene(sc);
 		stage.show();
 	}
-	
+
 	public void listView() {
 		dto = tp.loginChk(LoginServiceImpl.staticid);
-		id = (Label)newRoot.lookup("#id");
-		name = (Label)newRoot.lookup("#name");
+
+		id = (Label) newRoot.lookup("#id");
+		name = (Label) newRoot.lookup("#name");
 		id.setText(dto.getId());
 		name.setText(dto.getName());
-		
-		lv=(ListView)newRoot.lookup("#food");
-		count=(ListView)newRoot.lookup("#count");
-		list=FXCollections.observableArrayList();
-		listCount=FXCollections.observableArrayList();
-		//list.add("내 냉장고 음식");
-		ArrayList<FoodDTO> foodList = hb.DbValue();//db 다 들어옴.
-		
-		if(foodList !=null) {
-			for(int i=0;i <foodList.size();i++) {
+
+		lv = (ListView) newRoot.lookup("#food");
+		count = (ListView) newRoot.lookup("#count");
+		list = FXCollections.observableArrayList();
+		listCount = FXCollections.observableArrayList();
+		// list.add("내 냉장고 음식");
+		ArrayList<FoodDTO> foodList = hb.DbValue();// db 다 들어옴.
+
+		if (foodList != null) {
+			for (int i = 0; i < foodList.size(); i++) {
 				System.out.println(foodList.get(i).getFoodName());
 				list.add(foodList.get(i).getFoodName());
-				listCount.add(foodList.get(i).getFoodNum()+"개");
+				listCount.add(foodList.get(i).getFoodNum() + "개");
 			}
-		}lv.setItems(list); count.setItems(listCount);
+		}
+		lv.setItems(list);
+		count.setItems(listCount);
 	}
+
 	public void del() {
 		MemberDel md = new MemberDel();
 		md.setRoot(newRoot);
 		md.delView();
 	}
+
 	public void back() {
 		Method mt = new Method();
 		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
 
 		System.out.println("뒤로가기");
 	}
-	
+
 }

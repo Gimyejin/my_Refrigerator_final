@@ -193,6 +193,7 @@ public class MemoListController implements Initializable {
 ////         TextFlow textFlow;
 ////         textFlow.getChildren().add();
 //         
+
 //
 //         
 //      }else {
@@ -200,8 +201,8 @@ public class MemoListController implements Initializable {
 //      }
    }
 
-//
 //   
+// 이전에 쓰려고 했던 기능(일단 킵)
 //   @FXML
 //    public Label  myLabel;
 //    
