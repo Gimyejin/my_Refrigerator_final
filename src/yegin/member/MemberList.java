@@ -3,6 +3,8 @@ package yegin.member;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import geonhwe.Login.LoginServiceImpl;
+import geonhwe.db.teamproject;
 import geonhwe.member.MemberDTO;
 import hayong.FoodDTO;
 import hayong.HyDB;
@@ -27,17 +29,19 @@ public class MemberList {
 	ObservableList<String> listCount;
 	ListView<String> lv;
 	ListView<String> count;
-	
+	Label id,name;
 	ShelfLife_Method sm;
 	MemberDTO dto;
 	HyDB hb;
-
+	teamproject tp;
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
 	public void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;
 		hb=new HyDB();
+		dto = new MemberDTO();
+		tp = new teamproject();
 		listView();
 		
 	}
@@ -63,6 +67,12 @@ public class MemberList {
 	}
 	
 	public void listView() {
+		dto = tp.loginChk(LoginServiceImpl.staticid);
+		id = (Label)newRoot.lookup("#id");
+		name = (Label)newRoot.lookup("#name");
+		id.setText(dto.getId());
+		name.setText(dto.getName());
+		
 		lv=(ListView)newRoot.lookup("#food");
 		count=(ListView)newRoot.lookup("#count");
 		list=FXCollections.observableArrayList();
