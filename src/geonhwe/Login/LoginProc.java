@@ -26,7 +26,8 @@ public class LoginProc {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
          Parent root = loader.load();
          Scene scene = new Scene(root);
-         
+		 scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
          LoginController ctl = loader.getController();
          ctl.setRoot(root);
          ctl.setMainRoot(root2);
