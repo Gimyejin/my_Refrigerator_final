@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 public class Design {
 	ImageView log;
 	Parent root;
+	Parent newRoot;
 
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -18,10 +19,11 @@ public class Design {
 	public void log() {
 		log.setImage(new Image("/yegin/resources/test3.png"));
 	}
-	/*@FXML
-    Button button;
-    public void initialize (){
-        ImageView imageView = new ImageView(getClass().getResource("/yegin/resources/arrow.png").toExternalForm());
-        button.setGraphic(imageView);
-    }*/
+
+
+	public void item(Parent newRoot) {
+		this.newRoot=newRoot;
+		log = (ImageView) newRoot.lookup("#item");
+		log.setImage(new Image("/yegin/resources/내용물.png"));
+	}
 }

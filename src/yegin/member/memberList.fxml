@@ -31,6 +31,6 @@
       <Button layoutX="190.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
       <ListView fx:id="food" layoutX="90.0" layoutY="255.0" prefHeight="200.0" prefWidth="104.0" />
       <ListView fx:id="count" layoutX="204.0" layoutY="255.0" prefHeight="200.0" prefWidth="57.0" />
-      <ImageView fx:id="item" fitHeight="54.0" fitWidth="104.0" layoutX="90.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="item" fitHeight="68.0" fitWidth="112.0" layoutX="82.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
