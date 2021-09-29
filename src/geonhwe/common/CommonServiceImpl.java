@@ -11,7 +11,8 @@ public class CommonServiceImpl implements CommonService{
 	}
 
 	@Override
-	public void windowClose() {
+	public void windowClose() 
+	{System.out.println(root);
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}

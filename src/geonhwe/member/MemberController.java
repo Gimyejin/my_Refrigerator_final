@@ -30,6 +30,7 @@ public class MemberController implements Initializable{
 	}
 	public void memberCancle() {
 		System.out.println("취소 클릭");
+		ms.setRoot(root);
 		ms.memberCancle();
 	}
 }

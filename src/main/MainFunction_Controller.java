@@ -26,8 +26,9 @@ import yegin.alert.AlertController;
 
 import yegin.shelf_life.shelfLifeController;
 import yegin.common.Method;
+import yegin.member.MemberChange;
+import yegin.member.MemberList;
 import yegin.shelf_life.shelfLifeController;
-
 
 public class MainFunction_Controller implements Initializable {
 	Parent root;
@@ -52,6 +53,22 @@ public class MainFunction_Controller implements Initializable {
 
 	}
 
+	public void logout() {
+		LoginServiceImpl.staticid = null;
+		MainClass mc = new MainClass();
+		Stage primaryStage = new Stage();
+		try {
+			mc.start(primaryStage);
+			Stage stage = (Stage) root.getScene().getWindow();
+			stage.close();
+			AlertController.atler("로그아웃 합니다", "로그아웃");
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public void membershipProc() {
 		System.out.println("회원가입 클릭");
 		ms.membershipProc();
@@ -69,7 +86,6 @@ public class MainFunction_Controller implements Initializable {
 	public void btnTemp() {
 		tc.temp();
 	}
-
 
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
@@ -94,17 +110,27 @@ public class MainFunction_Controller implements Initializable {
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
 
 		stage.setScene(sc);
 		stage.show();
 	}
 
-	public void alert() {
-		System.out.println("알람");
-		AlertController ac = new AlertController();
-		ac.setRoot(newRoot);
-		ac.alert();
+	public void memberchange() {
+		MemberChange memberC = new MemberChange();
+		memberC.setRoot(newRoot);
+		memberC.change();
+	}
+
+	/*
+	 * public void alert() { System.out.println("알람"); AlertController ac = new
+	 * AlertController(); ac.setRoot(newRoot); ac.alert(); }
+	 */
+
+	public void member() {
+		MemberList ml = new MemberList();
+		ml.setRoot(newRoot);
+		ml.view();
 	}
 
 	public void cold_Storage() {
@@ -123,7 +149,7 @@ public class MainFunction_Controller implements Initializable {
 
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot2(newRoot);
@@ -142,7 +168,7 @@ public class MainFunction_Controller implements Initializable {
 
 	public void food() {
 		System.out.println("관리로이동");
-		hy.foodScene();	
+		hy.foodScene();
 	}
 
 	public void back() {
@@ -156,4 +182,3 @@ public class MainFunction_Controller implements Initializable {
 	}
 
 }
-

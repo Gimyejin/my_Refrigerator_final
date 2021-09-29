@@ -9,24 +9,24 @@
 	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 	-fx-background-repeat: no-repeat;
 }
-
 .button {
-	-fx-text-fill: white;
-	-fx-font-family: "Arial_Narrow";
-	-fx-font-weight: bold;
-	-fx-background-color: linear-gradient(#61a2b1, #2A5058);
-	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+	-fx-border-radius: 4px;
+	-fx-background-radius: 4px;
+	-fx-background-color: #007bff;
+	-fx-text-fill: #fff;
+	-fx-border-color: #007bff;
+	-fx-padding: 5px 5px;
 }
 
-.button-blue {
-	-fx-background-color: #7CAFC2;
-	-fx-text-fill: #FFFFFF;
-	-fx-background-radius: 4;
+.button:hover {
+	-fx-background-color: #0069d9;
+	-fx-border-color: #0062cc;
 }
+
 
 #list {
 	-fx-font-size: 32px;
-	-fx-font-family: "Arial_Black";
+	
 	-fx-fill: #818181;
 	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
 }
