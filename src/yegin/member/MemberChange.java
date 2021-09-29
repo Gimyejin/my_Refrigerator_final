@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
 import yegin.common.Method;
+import yegin.css.Design;
 import yegin.shelf_life.ShelfLife_Method;
 
 public class MemberChange {
@@ -24,13 +25,16 @@ public class MemberChange {
 	PasswordField pw2;
 	ShelfLife_Method sm;
 	MemberDTO dto;
-
+	Design design;
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
 
 	private void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;
+		design = new Design();
+		design.change(newRoot);
+		
 		sm = new ShelfLife_Method();
 		id = (Label) newRoot.lookup("#id");
 		name = (Label) newRoot.lookup("#name");

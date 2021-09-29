@@ -2,14 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../yegin/css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
-      <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="냉동기능 페이지입니다(추후삭제)" />
-      <Button layoutX="125.0" layoutY="88.0" mnemonicParsing="false" onAction="#memberchange" text="회원 수정" />
+      <Button layoutX="127.0" layoutY="114.0" mnemonicParsing="false" onAction="#memberchange" prefHeight="75.0" prefWidth="110.0" text="회원 수정" />
      <!-- <Button layoutX="127.0" layoutY="142.0" mnemonicParsing="false" onAction="#alert" text="알림 설정 버튼" /> --> 
-      <Button layoutX="127.0" layoutY="142.0" mnemonicParsing="false" onAction="#member" text="회원 정보" /> 
-       <Button layoutX="245.0" layoutY="123.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
+      <Button layoutX="114.0" layoutY="238.0" mnemonicParsing="false" onAction="#member" prefHeight="155.0" prefWidth="130.0" text="회원 정보" /> 
+       <Button layoutX="261.0" layoutY="48.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
    </children>
 </AnchorPane>

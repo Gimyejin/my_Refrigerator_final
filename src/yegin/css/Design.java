@@ -12,6 +12,7 @@ public class Design {
 	ImageView count;
 	ImageView id,name,log2 ,log3,date;
 	ImageView test,list;
+	ImageView changlog;
 	Parent root;//메인 화면 log용
 	Parent newRoot;
 
@@ -55,5 +56,10 @@ public class Design {
 		test.setImage(new Image("/yegin/resources/food.png"));
 		list.setImage(new Image("/yegin/resources/유통기한리스트.png"));
 		
+	}
+	public void change(Parent newRoot) {
+		this.newRoot=newRoot;
+		changlog= (ImageView) newRoot.lookup("#changlog");
+		changlog.setImage(new Image("/yegin/resources/수정.png"));
 	}
 }
