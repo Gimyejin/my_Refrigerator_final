@@ -1,3 +1,4 @@
+
 package yegin.alert;
 
 import java.io.IOException;
@@ -114,3 +115,4 @@ public class AlertController implements Initializable {
    }
 
 }
+
