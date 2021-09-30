@@ -7,37 +7,29 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="183.0" prefWidth="306.0" style="-fx-background-color: #FFF;" stylesheets="@../css/design3.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.shelf_life.shelfLifeController">
+<AnchorPane prefHeight="183.0" prefWidth="300.0" style="-fx-background-color: #FFF;" stylesheets="@../css/design3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.shelf_life.shelfLifeController">
    <children>
-      <HBox layoutX="28.0" layoutY="39.0" prefHeight="118.0" prefWidth="258.0" style="-fx-border-color: #4FC3F7; -fx-border-width: 3PX; -fx-border-radius: 10px;" />
-      <HBox layoutX="84.0" layoutY="20.0" prefHeight="48.0" prefWidth="133.0" style="-fx-background-color: #FFF;">
-         <children>
-            <Label fx:id="itemName" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="183.0" text="(품목명)">
-               <font>
-                  <Font name="HCR Dotum Bold" size="18.0" />
-               </font>
-            </Label>
-         </children></HBox>
+      <HBox layoutX="28.0" layoutY="44.0" prefHeight="118.0" prefWidth="258.0" style="-fx-border-color: #4FC3F7; -fx-border-width: 3PX; -fx-border-radius: 10px;" />
+      <HBox layoutX="84.0" layoutY="20.0" prefHeight="48.0" prefWidth="133.0" style="-fx-background-color: #FFF;" />
       <ComboBox fx:id="year" layoutX="55.0" layoutY="105.0" prefHeight="23.0" prefWidth="68.0" promptText="년도" style="-fx-background-color: #90CAF9;" />
       <ComboBox fx:id="month" layoutX="129.0" layoutY="105.0" prefHeight="23.0" prefWidth="56.0" promptText="월" style="-fx-background-color: #BBDEFB;" />
       <ComboBox fx:id="day" layoutX="191.0" layoutY="105.0" prefHeight="23.0" prefWidth="56.0" promptText="일" style="-fx-background-color: #E3F2FD;" />
+      <Label fx:id="itemName" alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" text="(품목명)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <Label layoutX="50.0" layoutY="78.0" text="기존 유통기한:">
          <font>
-            <Font name="HCR Dotum Bold" size="14.0" />
+            <Font name="HYGothic-Medium" size="14.0" />
          </font>
       </Label>
       <Label fx:id="old_time" layoutX="153.0" layoutY="78.0" text="(기존유통기한)">
          <font>
-            <Font name="HCR Dotum Bold" size="14.0" />
+            <Font name="HYGothic-Medium" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="93.0" layoutY="142.0" mnemonicParsing="false" onAction="#change" prefHeight="27.0" prefWidth="49.0" text="수정">
-         <font>
-            <Font name="HCR Dotum Bold" size="12.0" />
-         </font></Button>
-      <Button layoutX="160.0" layoutY="142.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="49.0" text="닫기">
-         <font>
-            <Font name="HCR Dotum Bold" size="12.0" />
-         </font></Button>
+      <Button layoutX="93.0" layoutY="142.0" mnemonicParsing="false" onAction="#change" prefHeight="27.0" prefWidth="49.0" text="수정" />
+      <Button layoutX="160.0" layoutY="142.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="49.0" text="닫기" />
    </children>
 </AnchorPane>
