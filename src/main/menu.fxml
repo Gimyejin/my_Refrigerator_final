@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../yegin/css/design4.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
-      <Button fx:id="ice" layoutX="68.0" layoutY="71.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="105.0" prefWidth="214.0" stylesheets="@../yegin/css/design4.css" text="냉동" />
-      <Button fx:id="cold" layoutX="74.0" layoutY="288.0" mnemonicParsing="false" onAction="#cold_Storage" prefHeight="154.0" prefWidth="214.0" text="냉장" />
+      <Button fx:id="ice" layoutX="81.0" layoutY="63.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="105.0" prefWidth="201.0" stylesheets="@../yegin/css/design4.css" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" text="로그아웃" />
       <ImageView fx:id="fxmemo" fitHeight="90.0" fitWidth="100.0" layoutX="225.0" layoutY="107.0" onMouseClicked="#btnMemo" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="temp" fitHeight="90.0" fitWidth="173.0" layoutX="137.0" layoutY="206.0" onMouseClicked="#btnTemp" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="temp" fitHeight="79.0" fitWidth="157.0" layoutX="133.0" layoutY="216.0" onMouseClicked="#btnTemp" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="133.0" layoutY="168.0" text="회 원 관 리" />
+      <ImageView fx:id="add" fitHeight="161.0" fitWidth="215.0" layoutX="68.0" layoutY="295.0" onMouseClicked="#cold_Storage" pickOnBounds="true" preserveRatio="true" />
       
    </children>
 </AnchorPane>
