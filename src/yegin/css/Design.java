@@ -30,13 +30,13 @@ public class Design {
 		this.newRoot=newRoot;
 		item = (ImageView) newRoot.lookup("#item");
 		count = (ImageView) newRoot.lookup("#itemcount");
-		id = (ImageView) newRoot.lookup("#fxid");
-		name = (ImageView) newRoot.lookup("#fxname");
+		//id = (ImageView) newRoot.lookup("#fxid");
+		//name = (ImageView) newRoot.lookup("#fxname");
 		log2 = (ImageView) newRoot.lookup("#log2");
 		item.setImage(new Image("/yegin/resources/내용물.png"));
 		count.setImage(new Image("/yegin/resources/수량.png"));
-		id.setImage(new Image("/yegin/resources/아이디.png"));
-		name.setImage(new Image("/yegin/resources/이름.png"));
+		//id.setImage(new Image("/yegin/resources/아이디.png"));
+		//name.setImage(new Image("/yegin/resources/이름.png"));
 		log2.setImage(new Image("/yegin/resources/회원정보.png"));
 	}
 	

@@ -11,24 +11,30 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberChange">
    <children>
-      <Label fx:id="id" layoutX="183.0" layoutY="234.0" prefHeight="15.0" prefWidth="120.0" text="(id)" />
-      <Text layoutX="97.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+      <Label fx:id="id" alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="241.0" prefHeight="27.0" prefWidth="120.0" style="-fx-border-color: #90CAF9; -fx-border-width: 3px;" text="(id)" />
+      <Text layoutX="85.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
          <font>
-            <Font size="14.0" />
+            <Font name="HYGothic-Extra" size="20.0" />
          </font>
       </Text>
-      <Label fx:id="name" layoutX="183.0" layoutY="269.0" prefHeight="15.0" prefWidth="120.0" text="(이름)" />
-      <Text layoutX="101.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
+      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="272.0" prefHeight="25.0" prefWidth="120.0" style="-fx-border-color: #64B5F6; -fx-border-width: 3px;" text="(이름)" />
+      <Text layoutX="64.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드">
          <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="81.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드" />
-      <Text layoutX="64.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 확인" wrappingWidth="101.99999806284904" />
-      <TextField fx:id="pw1" layoutX="151.0" layoutY="327.0" />
-      <Button layoutX="128.0" layoutY="462.0" mnemonicParsing="false" onAction="#ok" text="수정" />
-      <Button layoutX="198.0" layoutY="462.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
-      <PasswordField fx:id="pw2" layoutX="151.0" layoutY="360.0" />
+            <Font name="HYGothic-Medium" size="15.0" />
+         </font></Text>
+      <Text layoutX="64.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 확인" textAlignment="CENTER" wrappingWidth="60.00000424683094">
+         <font>
+            <Font name="HYGothic-Medium" size="15.0" />
+         </font></Text>
+      <TextField fx:id="pw1" layoutX="134.0" layoutY="327.0" style="-fx-border-color: #90CAF9; -fx-background-color: #E3F2FD;" />
+      <Button layoutX="128.0" layoutY="469.0" mnemonicParsing="false" onAction="#ok" text="수정" />
+      <Button layoutX="198.0" layoutY="468.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
+      <PasswordField fx:id="pw2" layoutX="134.0" layoutY="360.0" style="-fx-border-color: #64B5F6; -fx-background-color: #BBDEFB;" />
       <ImageView fx:id="changlog" fitHeight="108.0" fitWidth="242.0" layoutX="72.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="92.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이 름">
+         <font>
+            <Font name="HYGothic-Extra" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

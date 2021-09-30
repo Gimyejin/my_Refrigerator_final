@@ -5,19 +5,33 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberList">
-   <children>
-      <Button layoutX="114.0" layoutY="466.0" mnemonicParsing="false" onAction="#del" text="탈퇴하기" />
-      <Button layoutX="210.0" layoutY="466.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
-      <ListView fx:id="food" layoutX="90.0" layoutY="255.0" prefHeight="200.0" prefWidth="104.0" />
-      <ListView fx:id="count" layoutX="204.0" layoutY="255.0" prefHeight="200.0" prefWidth="57.0" />
-      <ImageView fx:id="item" fitHeight="54.0" fitWidth="94.0" layoutX="88.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="itemcount" fitHeight="39.0" fitWidth="57.0" layoutX="203.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="id" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="111.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(id)" />
-      <Label fx:id="name" alignment="CENTER" layoutX="173.0" layoutY="163.0" prefHeight="15.0" prefWidth="120.0" styleClass="container" text="(name)" />
-      <ImageView fx:id="fxid" fitHeight="68.0" fitWidth="94.0" layoutX="76.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="fxname" fitHeight="45.0" fitWidth="81.0" layoutX="83.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="log2" fitHeight="89.0" fitWidth="164.0" layoutX="94.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
-   </children>
+	<children>
+		<Button layoutX="114.0" layoutY="466.0" mnemonicParsing="false" onAction="#del" style="-fx-background-color: #5C6BC0;" text="탈퇴하기" />
+		<Button layoutX="210.0" layoutY="466.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #5C6BC0;" text="뒤로" />
+		<ListView fx:id="food" layoutX="90.0" layoutY="255.0" prefHeight="200.0" prefWidth="104.0" style="-fx-border-width: 3px; -fx-border-color: #9FA8DA;" />
+		<ListView fx:id="count" layoutX="204.0" layoutY="255.0" prefHeight="200.0" prefWidth="57.0" style="-fx-border-color: #7986CB; -fx-border-width: 3px;" />
+		<ImageView fx:id="item" fitHeight="54.0" fitWidth="94.0" layoutX="88.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
+		<ImageView fx:id="itemcount" fitHeight="39.0" fitWidth="57.0" layoutX="203.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
+		<Label fx:id="id" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="119.0" prefHeight="27.0" prefWidth="120.0" style="-fx-border-color: #C5CAE9; -fx-border-width: 3px;" styleClass="container" text="(id)" />
+		<Label fx:id="name" alignment="CENTER" layoutX="168.0" layoutY="155.0" prefHeight="27.0" prefWidth="120.0" style="-fx-border-color: #9FA8DA; -fx-border-width: 3px;" styleClass="container" text="(name)" />
+		<!-- <ImageView fx:id="fxid" fitHeight="68.0" fitWidth="94.0" layoutX="76.0" 
+			layoutY="107.0" pickOnBounds="true" preserveRatio="true" /> <ImageView fx:id="fxname" 
+			fitHeight="45.0" fitWidth="81.0" layoutX="83.0" layoutY="153.0" pickOnBounds="true" 
+			preserveRatio="true" /> -->
+		<ImageView fx:id="log2" fitHeight="89.0" fitWidth="164.0" layoutX="94.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+		<Text layoutX="100.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+			<font>
+				<Font name="HYGothic-Extra" size="20.0" />
+			</font>
+		</Text>
+		<Text layoutX="107.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이 름">
+			<font>
+				<Font name="HYGothic-Extra" size="20.0" />
+			</font>
+		</Text>
+	</children>
 </AnchorPane>
