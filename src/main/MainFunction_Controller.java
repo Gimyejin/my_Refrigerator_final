@@ -21,19 +21,16 @@ import hayong.HyMain;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-<<<<<<< HEAD
+
 import javafx.scene.image.ImageView;
-=======
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
+
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
 
 import yegin.shelf_life.shelfLifeController;
 import yegin.common.Method;
-<<<<<<< HEAD
+
 import yegin.css.Design;
-=======
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
 import yegin.member.MemberChange;
 import yegin.member.MemberList;
 import yegin.shelf_life.shelfLifeController;
@@ -200,6 +197,5 @@ public class MainFunction_Controller implements Initializable {
 
 	public void setRoot4(Parent root) {
 		this.newRoot = root;
-		
 	}
 }

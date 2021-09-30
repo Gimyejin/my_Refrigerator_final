@@ -4,46 +4,25 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<<<<<<< HEAD
 <?import javafx.scene.image.ImageView?>
-=======
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<<<<<<< HEAD
 <AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberChange">
    <children>
       <Label fx:id="id" layoutX="183.0" layoutY="234.0" prefHeight="15.0" prefWidth="120.0" text="(id)" />
       <Text layoutX="97.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
-=======
-<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberChange">
-   <children>
-      <Label fx:id="id" layoutX="183.0" layoutY="215.0" prefHeight="15.0" prefWidth="120.0" text="(id)" />
-      <Text layoutX="97.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-<<<<<<< HEAD
       <Label fx:id="name" layoutX="183.0" layoutY="269.0" prefHeight="15.0" prefWidth="120.0" text="(이름)" />
       <Text layoutX="101.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
-=======
-      <Text layoutX="95.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 정보 수정">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Label fx:id="name" layoutX="183.0" layoutY="244.0" prefHeight="15.0" prefWidth="120.0" text="(이름)" />
-      <Text layoutX="97.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-<<<<<<< HEAD
       <Text layoutX="81.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드" />
       <Text layoutX="64.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 확인" wrappingWidth="101.99999806284904" />
       <TextField fx:id="pw1" layoutX="151.0" layoutY="327.0" />
@@ -51,13 +30,5 @@
       <Button layoutX="198.0" layoutY="462.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
       <PasswordField fx:id="pw2" layoutX="151.0" layoutY="360.0" />
       <ImageView fx:id="changlog" fitHeight="108.0" fitWidth="242.0" layoutX="72.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
-=======
-      <Text layoutX="64.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드" />
-      <Text layoutX="64.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 확인" wrappingWidth="101.99999806284904" />
-      <TextField fx:id="pw1" layoutX="151.0" layoutY="302.0" />
-      <Button layoutX="128.0" layoutY="462.0" mnemonicParsing="false" onAction="#ok" text="수정" />
-      <Button layoutX="198.0" layoutY="462.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
-      <PasswordField fx:id="pw2" layoutX="151.0" layoutY="335.0" />
->>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
    </children>
 </AnchorPane>

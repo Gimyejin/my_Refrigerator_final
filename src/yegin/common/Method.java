@@ -6,14 +6,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.LoginButton_Controller;
 import main.MainFunction_Controller;
-<<<<<<< HEAD
 import yegin.css.Design;
 
 public class Method {
 	Design design = new Design();;
-	
-public class Method {
-	public void mfc(Stage primaryStage, String fxml) {//MainFunction_Controller와 연결
+
+	public void mfc(Stage primaryStage, String fxml) {// MainFunction_Controller와 연결
 
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
@@ -71,6 +69,7 @@ public class Method {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }

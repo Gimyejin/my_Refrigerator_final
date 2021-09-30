@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package yegin.css;
 
 import javafx.fxml.FXML;
