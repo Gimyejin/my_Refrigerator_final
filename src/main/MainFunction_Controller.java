@@ -191,9 +191,7 @@ public class MainFunction_Controller implements Initializable {
 		} else {
 			mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/menu.fxml");
 		}
-
 	}
-
 
 	public void setRoot4(Parent root) {
 		this.newRoot = root;
