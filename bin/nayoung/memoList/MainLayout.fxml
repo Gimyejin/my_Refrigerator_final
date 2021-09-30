@@ -4,12 +4,12 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" styleClass="container" stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nayoung.memoList.MemoListController">
    <children>
@@ -30,17 +30,14 @@
       <Pane layoutX="290.0" layoutY="14.0" prefHeight="375.0" prefWidth="300.0" styleClass="container">
          <children>
             <ListView fx:id="list" layoutX="13.0" layoutY="14.0" prefHeight="303.0" prefWidth="276.0" />
-            <Button layoutX="166.0" layoutY="329.0" mnemonicParsing="false" onAction="#seeList" styleClass="btn" text="보기" />
             <Button layoutX="236.0" layoutY="329.0" mnemonicParsing="false" onAction="#delList" styleClass="btn" text="삭제" />
          </children>
       </Pane>
-      <Pane layoutX="14.0" layoutY="234.0" prefHeight="150.0" prefWidth="240.0" styleClass="container">
-         <children>
-            <ScrollPane layoutX="9.0" layoutY="7.0">
-               <content>
-                  <TextFlow fx:id="textFlow" prefHeight="137.0" prefWidth="222.0" />
-               </content>
-            </ScrollPane>
-         </children></Pane>
+      <ImageView fx:id="fxImageView" fitHeight="162.0" fitWidth="240.0" layoutX="15.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="162.0" fitWidth="240.0" layoutX="14.0" layoutY="228.0">
+         <image>
+            <Image url="@../../../../../../../Users/Hayden/OneDrive/바탕%20화면/shoppinglist.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

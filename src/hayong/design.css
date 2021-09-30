@@ -3,18 +3,14 @@
 }
 
 .label {
-	-fx-font-size: 14px;
-	-fx-font-weight: bold;
-	-fx-text-fill: #333333;
-	-fx-effect: dropshadow(gaussian, red, 0, 0, 0, 1);
-	-fx-background-repeat: no-repeat;
+
 }
 
 .button {
 	-fx-text-fill: white;
 	-fx-font-family: "Arial_Narrow";
 	-fx-font-weight: bold;
-	-fx-background-color: linear-gradient(greenyellow, limegreen);
+	-fx-background-color: #9c70d3;
 	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 

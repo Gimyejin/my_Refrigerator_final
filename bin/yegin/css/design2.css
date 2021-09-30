@@ -18,6 +18,8 @@
 	-fx-border-color: #B388FF;
 	-fx-padding: 5.0px 5.0px;
 	-fx-background-image: url("../resources/수정용.png");
+	-fx-background-size: cover;
+	-fx-background-position: center center;
 	
 }
 #fxmember{
@@ -29,6 +31,8 @@
 	-fx-border-color: #007bff;
 	-fx-padding: 5.0px 5.0px;
 	-fx-background-image: url("../resources/리스트.png");
+	-fx-background-size: cover;
+	-fx-background-position: center center;
 }
 .button {
 	-fx-border-radius: 4.0px;
