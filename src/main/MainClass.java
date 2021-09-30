@@ -21,7 +21,6 @@ public class MainClass extends Application {
 		scene.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
 	}
 
 	public static void main(String[] args) {
