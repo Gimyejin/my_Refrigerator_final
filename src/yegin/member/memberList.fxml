@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<<<<<<< HEAD
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberList">
    <children>
@@ -19,5 +20,34 @@
       <ImageView fx:id="fxid" fitHeight="68.0" fitWidth="94.0" layoutX="76.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="fxname" fitHeight="45.0" fitWidth="81.0" layoutX="83.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="log2" fitHeight="89.0" fitWidth="164.0" layoutX="94.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+=======
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberList">
+   <children>
+      <Label fx:id="id" layoutX="182.0" layoutY="132.0" prefHeight="15.0" prefWidth="120.0" text="(id)" />
+      <Text layoutX="96.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 정보">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="name" layoutX="182.0" layoutY="161.0" prefHeight="15.0" prefWidth="120.0" text="(이름)" />
+      <Text layoutX="96.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="120.0" layoutY="464.0" mnemonicParsing="false" onAction="#del" text="탈퇴하기" />
+      <Button layoutX="190.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="뒤로" />
+      <ListView fx:id="food" layoutX="90.0" layoutY="255.0" prefHeight="200.0" prefWidth="104.0" />
+      <ListView fx:id="count" layoutX="204.0" layoutY="255.0" prefHeight="200.0" prefWidth="57.0" />
+      <ImageView fx:id="item" fitHeight="54.0" fitWidth="104.0" layoutX="90.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+>>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
    </children>
 </AnchorPane>

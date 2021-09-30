@@ -21,13 +21,19 @@ import hayong.HyMain;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+<<<<<<< HEAD
 import javafx.scene.image.ImageView;
+=======
+>>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
 import javafx.stage.Stage;
 import yegin.alert.AlertController;
 
 import yegin.shelf_life.shelfLifeController;
 import yegin.common.Method;
+<<<<<<< HEAD
 import yegin.css.Design;
+=======
+>>>>>>> 31984e95ca50f26e3426c2a3987c1e85d903d458
 import yegin.member.MemberChange;
 import yegin.member.MemberList;
 import yegin.shelf_life.shelfLifeController;
@@ -41,6 +47,7 @@ public class MainFunction_Controller implements Initializable {
 	hayong.HyMain hy;
 	ImageView food;
 	Design design;
+
 	public void setRoot(Parent root) {
 		this.root = root;
 		ms.setRoot(root);
@@ -55,7 +62,6 @@ public class MainFunction_Controller implements Initializable {
 		hy = new HyMain();
 
 	}
-	
 	public void logout() {
 		LoginServiceImpl.staticid = null;
 		MainClass mc = new MainClass();
@@ -92,15 +98,14 @@ public class MainFunction_Controller implements Initializable {
 
 	public void setRoot2(Parent root) {
 		this.newRoot = root;
+
 		design = new Design();
-		design.menu(newRoot);
-		
+		design.menu(newRoot);	
 	}
 	public void setRoot3(Parent root) {
 		this.newRoot = root;
-		
-		
 	}
+
 	public void frozen_Storage() {
 		System.out.println("냉동고 버튼 눌림");
 
@@ -119,6 +124,7 @@ public class MainFunction_Controller implements Initializable {
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
+
 		mc.setRoot3(newRoot);
 		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
 
@@ -191,10 +197,9 @@ public class MainFunction_Controller implements Initializable {
 
 	}
 
+
 	public void setRoot4(Parent root) {
 		this.newRoot = root;
 		
 	}
-	
-
 }
