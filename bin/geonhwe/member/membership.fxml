@@ -6,31 +6,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geonhwe.member.MemberController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geonhwe.member.MemberController">
    <children>
-      <Button layoutX="214.0" layoutY="283.0" mnemonicParsing="false" onAction="#membershipProc" text="회원가입" />
-      <Button layoutX="304.0" layoutY="283.0" mnemonicParsing="false" onAction="#memberCancle" text="취소" />
-      <TextField fx:id="fxId" layoutX="153.0" layoutY="106.0" />
+      <Button fx:id="btnMembership" layoutX="207.0" layoutY="258.0" mnemonicParsing="false" onAction="#membershipProc" text="회원가입" textFill="#f5f8fc">
+         <font>
+            <Font name="HCR Dotum Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnCancel" layoutX="300.0" layoutY="258.0" mnemonicParsing="false" onAction="#memberCancle" text="취소" textFill="#f5f8fc">
+         <font>
+            <Font name="HCR Dotum Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="fxId" layoutX="153.0" layoutY="109.0" />
       <TextField fx:id="fxPw" layoutX="153.0" layoutY="157.0" />
       <TextField fx:id="fxName" layoutX="153.0" layoutY="203.0" />
       <Label layoutX="38.0" layoutY="102.0" text="아이디">
          <font>
-            <Font size="25.0" />
+            <Font name="HCR Dotum" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="25.0" layoutY="153.0" text="비밀번호">
+      <Label layoutX="26.0" layoutY="150.0" text="비밀번호">
          <font>
-            <Font size="25.0" />
+            <Font name="HCR Dotum" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="200.0" text="이름">
+      <Label layoutX="50.0" layoutY="196.0" text="이름">
          <font>
-            <Font size="25.0" />
+            <Font name="HCR Dotum" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="74.0" layoutY="14.0" text="회 원 가 입 창">
+      <Label layoutX="95.0" layoutY="14.0" text="회 원 가 입" textFill="#44a8f0">
          <font>
-            <Font size="35.0" />
+            <Font name="HYGothic-Extra" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="65.0" text="나의 냉장고에 오신걸 환영합니다">
+         <font>
+            <Font name="HCR Dotum" size="12.0" />
          </font>
       </Label>
    </children>

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class TempProc{
@@ -18,7 +19,8 @@ public class TempProc{
 			Parent root = loader.load();
 			
 			Scene scene = new Scene(root);
-			
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
 			primaryStage.setTitle("INTERACTIVE DISPLAY");
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -28,6 +30,8 @@ public class TempProc{
 			e.printStackTrace();
 		}
 	}
+
+	
 
 	
 
