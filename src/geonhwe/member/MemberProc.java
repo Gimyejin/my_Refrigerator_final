@@ -16,7 +16,8 @@ public class MemberProc {
 					new FXMLLoader(getClass().getResource("membership.fxml"));
 			Parent root1 = loader.load();
 			Scene scene = new Scene(root1);
-			
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
 			MemberController ctl = loader.getController();
 			ctl.setRoot(root1);
 			

@@ -186,32 +186,32 @@ public class MemoListController implements Initializable {
    }
 
    public void delList() {
-      Connection conn = db.getConnection();
-         if (conn == null) {
-            AppUtil.alert("DB연결에 실패했습니다.", null);
-            return;
-         }
-         
+	   Connection conn = db.getConnection();
+	      if (conn == null) {
+	         AppUtil.alert("DB연결에 실패했습니다.", null);
+	         return;
+	      }
+
       int idx = list.getSelectionModel().getSelectedIndex();
       ShoppingList dto = sp_alist.get(idx);
   
       if (idx >= 0) {
          int result=0;
          pstmt = null;
-       
-       String sql="delete from shoppinglist where id=? and LIST=?and SL_DATE=? ";
-             
-       try {
-           pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-           pstmt.setString(1, LoginServiceImpl.staticid);
-             pstmt.setString(2, dto.getName());
-             pstmt.setDate(3, Date.valueOf(dto.getDate()));
-             result = pstmt.executeUpdate();
-       } catch (Exception e) {
-          e.printStackTrace();
-       }
-       items.remove(idx);
-       return; 
+ 		
+ 		String sql="delete from shoppinglist where id=? and LIST=?and SL_DATE=? ";
+ 				
+ 		try {
+ 			 pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+ 			 pstmt.setString(1, LoginServiceImpl.staticid);
+ 	         pstmt.setString(2, dto.getName());
+ 	         pstmt.setDate(3, Date.valueOf(dto.getDate()));
+ 	         result = pstmt.executeUpdate();
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 		items.remove(idx);
+ 		return; 
       } else {
          AppUtil.alert("삭제할 항목을 선택하세요", "에러");
       }
@@ -220,8 +220,9 @@ public class MemoListController implements Initializable {
    }
    
  //String sql="delete from shoppinglist where id=?";
-   //String sql="delete from shoppinglist where id=? and LIST=? SL_DATE=? "
-   //String sql = "DELETE FROM SHOPPINGLIST (LIST, SL_DATE, ID) VALUES( ?, ?,?)";
+	//String sql="delete from shoppinglist where id=? and LIST=? SL_DATE=? "
+	//String sql = "DELETE FROM SHOPPINGLIST (LIST, SL_DATE, ID) VALUES( ?, ?,?)";
+
 
    public void seeList() {
 //      int idx = list.getSelectionModel().getSelectedIndex();
