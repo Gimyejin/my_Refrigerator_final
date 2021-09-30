@@ -13,6 +13,7 @@ public class Design {
 	ImageView id,name,log2 ,log3,date;
 	ImageView test,list;
 	ImageView changlog;
+	ImageView fxmemo,temp;
 	Parent root;//메인 화면 log용
 	Parent newRoot;
 
@@ -61,5 +62,13 @@ public class Design {
 		this.newRoot=newRoot;
 		changlog= (ImageView) newRoot.lookup("#changlog");
 		changlog.setImage(new Image("/yegin/resources/수정.png"));
+	}
+	
+	public void menuHome(Parent newRoot) {
+		this.newRoot=newRoot;
+		fxmemo= (ImageView) newRoot.lookup("#fxmemo");
+		temp= (ImageView) newRoot.lookup("#temp");
+		fxmemo.setImage(new Image("/yegin/resources/memo.png"));
+		temp.setImage(new Image("/yegin/resources/tmp.png"));
 	}
 }

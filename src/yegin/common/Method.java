@@ -12,7 +12,6 @@ public class Method {
 	Design design = new Design();;
 
 	public void mfc(Stage primaryStage, String fxml) {// MainFunction_Controller와 연결
-
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
 
@@ -21,14 +20,13 @@ public class Method {
 			scene.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());
 			MainFunction_Controller ctl = loader.getController();
 			ctl.setRoot(root);
-
+			ctl.setRoot5(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void mfc2(Stage primaryStage, String fxml) {// 메뉴 디자인이 필요함
@@ -69,7 +67,6 @@ public class Method {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

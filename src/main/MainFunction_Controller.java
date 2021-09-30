@@ -198,4 +198,10 @@ public class MainFunction_Controller implements Initializable {
 	public void setRoot4(Parent root) {
 		this.newRoot = root;
 	}
+
+	public void setRoot5(Parent root) {
+		this.newRoot = root;
+		design = new Design();
+		design.menuHome(newRoot);
+	}
 }

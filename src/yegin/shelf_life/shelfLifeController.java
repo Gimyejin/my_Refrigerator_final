@@ -87,12 +87,6 @@ public class shelfLifeController  extends BorderPane{
 	public void shelfLifeList() {
 		System.out.println("유통기한 페이지로 넘어옴");
 
-		System.setProperty("prism.lcdtext", "false");
-
-		Font.loadFont(getClass().getResourceAsStream("/resources/Arial_Black.ttf"), 10);
-		Font.loadFont(getClass().getResourceAsStream("/resources/Arial_Narrow.ttf"), 10);
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("shelfLife.fxml"));
 		Parent newRoot = null;
 		Scene sc = null;
@@ -128,16 +122,11 @@ public class shelfLifeController  extends BorderPane{
 			listView1.add(list.get(i).getShelfLife());
 			Time t = new Time(list.get(i).getFoodName(), list.get(i).getShelfLife());
 			item.add(t);
-			// System.out.println(listView);
 		}
-		// System.out.println(listView);
 		fxListview.setItems(listView);
 		fxListview1.setItems(listView1);
 
 		fxListview1.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-			// System.out.println("observable(형식)" + observable);
-			// System.out.println("oldValue(이전값)" + oldValue);
-
 			System.out.println("newValue(현재값)" + newValue);
 			System.out.println(listView1.get((int) newValue));
 
@@ -147,7 +136,6 @@ public class shelfLifeController  extends BorderPane{
 			itemN = item.get((int) newValue).getItemName().getValue();
 			itemT = item.get((int) newValue).getLifeTime().getValue();
 		});
-
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -206,7 +194,7 @@ public class shelfLifeController  extends BorderPane{
 		setList();
 	}
 
-	public void shelfLifeComboBox() {// 유통기한
+	public void shelfLifeComboBox() {
 		ComboBox<String> year = (ComboBox<String>) otherRoot.lookup("#year");
 		if (year != null) {
 			year.getItems().addAll("2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030");
@@ -227,21 +215,16 @@ public class shelfLifeController  extends BorderPane{
 					|| month.getValue() == "12") {
 
 				for (int i = 10; i < 32; i++) {
-					allDay.add(Integer.toString(i));
-				}
+					allDay.add(Integer.toString(i));}
 			} else if (month.getValue() == "02") {
 				for (int i = 10; i < 29; i++) {
-					allDay.add(Integer.toString(i));
-				}
+					allDay.add(Integer.toString(i));}
 			} else {
 				for (int i = 10; i < 31; i++) {
-					allDay.add(Integer.toString(i));
-				}
+					allDay.add(Integer.toString(i));}
 			}
 			for (String chday : allDay) {
-				day.getItems().add(chday);
-			}
-
+				day.getItems().add(chday);}
 			day.setOnAction(a -> {
 				shelfday = year.getValue() + "년 " + month.getValue() + "월 " + day.getValue() + "일";
 				System.out.println("수정된 유통기한 체크: " + shelfday);
