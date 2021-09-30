@@ -24,6 +24,7 @@ public class MemberChange {
 	PasswordField pw2;
 	ShelfLife_Method sm;
 	MemberDTO dto;
+	
 	public void setRoot(Parent root) {
 		this.root = root;
 	}
