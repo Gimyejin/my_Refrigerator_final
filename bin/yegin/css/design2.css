@@ -3,19 +3,19 @@
 }
 
 .label {
-	-fx-font-size: 25px;
+	-fx-font-size: 25.0px;
 	-fx-font-weight: bold;
 	-fx-text-fill: #333333;
-	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-effect: dropshadow(gaussian, rgba(255.0, 255.0, 255.0, 0.5), 0.0, 0.0, 0.0, 1.0);
 	-fx-background-repeat: no-repeat;
 }
 .button {
-	-fx-border-radius: 4px;
-	-fx-background-radius: 4px;
+	-fx-border-radius: 4.0px;
+	-fx-background-radius: 4.0px;
 	-fx-background-color: #007bff;
 	-fx-text-fill: #fff;
 	-fx-border-color: #007bff;
-	-fx-padding: 5px 5px;
+	-fx-padding: 5.0px 5.0px;
 }
 
 .button:hover {
@@ -25,8 +25,7 @@
 
 
 #list {
-	-fx-font-size: 32px;
+	-fx-font-size: 32.0px;
 	
 	-fx-fill: #818181;
-	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
-}
+	}
