@@ -12,6 +12,19 @@ import javafx.scene.control.TextField;
 import geonhwe.common.*;
 import geonhwe.member.*;
 
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import geonhwe.common.*;
+import geonhwe.member.*;
+
 public class MemberController implements Initializable{
 	Parent root;
 	MemberServiceImpl ms;
@@ -34,7 +47,4 @@ public class MemberController implements Initializable{
 		ms.memberCancle();
 	}
 }
-
-
-
 

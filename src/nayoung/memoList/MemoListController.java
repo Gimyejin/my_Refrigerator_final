@@ -191,7 +191,7 @@ public class MemoListController implements Initializable {
 	         AppUtil.alert("DB연결에 실패했습니다.", null);
 	         return;
 	      }
-	      
+
       int idx = list.getSelectionModel().getSelectedIndex();
       ShoppingList dto = sp_alist.get(idx);
   
@@ -222,6 +222,7 @@ public class MemoListController implements Initializable {
  //String sql="delete from shoppinglist where id=?";
 	//String sql="delete from shoppinglist where id=? and LIST=? SL_DATE=? "
 	//String sql = "DELETE FROM SHOPPINGLIST (LIST, SL_DATE, ID) VALUES( ?, ?,?)";
+
 
    public void seeList() {
 //      int idx = list.getSelectionModel().getSelectedIndex();
@@ -280,3 +281,4 @@ public class MemoListController implements Initializable {
 //
 //}
 }
+

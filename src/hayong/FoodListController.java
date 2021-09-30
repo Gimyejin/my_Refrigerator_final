@@ -142,7 +142,6 @@ public class FoodListController implements Initializable{
 
    public void fxmod() { //수정기능
       FoodDTO dtomod = new FoodDTO(); 
-      System.out.println(dtomod.getOldName());
       ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
       dtomod.setOldName(a.get(0));
       TextArea food = (TextArea)root.lookup("#fxaddtext");

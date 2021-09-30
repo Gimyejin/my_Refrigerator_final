@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.LoginButton_Controller;
 
 public class MainClass extends Application {
 
@@ -20,7 +21,6 @@ public class MainClass extends Application {
 		scene.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
 	}
 
 	public static void main(String[] args) {
