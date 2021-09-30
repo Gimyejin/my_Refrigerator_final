@@ -1,4 +1,3 @@
-
 package yegin.shelf_life;
 
 import java.io.IOException;
@@ -28,6 +27,7 @@ import javafx.stage.Stage;
 import main.MainFunction_Controller;
 import yegin.alert.AlertController;
 import yegin.common.Method;
+import yegin.css.Design;
 
 public class shelfLifeController  extends BorderPane{
 	// 클릭시 해당 리스트로 넘어가기?
@@ -48,6 +48,7 @@ public class shelfLifeController  extends BorderPane{
 	AlertController ac;
 	shelfLifeController ctl;
 	String itemN, itemT;
+	Design design;
 	
 	public void setRoot(Parent root) {// 밖에서 이걸 건드림
 		this.root = root;
@@ -56,6 +57,10 @@ public class shelfLifeController  extends BorderPane{
 
 	private void setRoot2(Parent newRoot) {// 내부에서 건드림
 		this.newRoot = newRoot;
+		
+		design = new Design();
+		design.time(newRoot);
+		
 		fxListview = (ListView) newRoot.lookup("#viewList");
 		fxListview1 = (ListView) newRoot.lookup("#viewList1");
 		setList();
@@ -149,8 +154,9 @@ public class shelfLifeController  extends BorderPane{
 	public void back() {
 		System.out.println("뒤로 버튼");
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/coldStorage_function.fxml");
-
+		mt.mfc2((Stage) newRoot.getScene().getWindow(), "/main/coldStorage_function.fxml");
+		
+		
 	}
 
 	public void chage() {
