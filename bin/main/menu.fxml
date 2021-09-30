@@ -5,9 +5,9 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
-      <Button layoutX="68.0" layoutY="79.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="177.0" prefWidth="214.0" text="냉동" />
+      <Button fx:id="ice" layoutX="68.0" layoutY="79.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="177.0" prefWidth="214.0" text="냉동" />
       <Button fx:id="btnMemo" layoutX="220.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnMemo" prefHeight="63.0" prefWidth="92.0" text="메모" />
-      <Button layoutX="68.0" layoutY="310.0" mnemonicParsing="false" onAction="#cold_Storage" prefHeight="194.0" prefWidth="214.0" text="냉장" />
+      <Button fx:id="cold" layoutX="68.0" layoutY="310.0" mnemonicParsing="false" onAction="#cold_Storage" prefHeight="194.0" prefWidth="214.0" text="냉장" />
       <Button fx:id="btnTemp" layoutX="216.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnTemp" prefHeight="53.0" prefWidth="100.0" text="온도" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" text="로그아웃" />
       

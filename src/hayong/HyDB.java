@@ -84,7 +84,7 @@ public static Connection conn;
    }
    public int remove(FoodDTO dto) {
       int result=0;
-      try {         
+      try {
          String sql = "delete item_db where id=? and item_name=? and item_add_date=?";
          PreparedStatement ps = conn.prepareStatement(sql);
          ps.setString(1, LoginServiceImpl.staticid);

@@ -1,6 +1,15 @@
 
-
 package yegin.shelf_life;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import geonhwe.Login.LoginServiceImpl;
+import geonhwe.db.GeonhweDB;
+import geonhwe.member.MemberDTO;
+import hayong.FoodDTO;
+
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -74,6 +83,7 @@ public class ShelfLife_Method {
 			e.printStackTrace();
 		}
 		return result; 
+
 	}
 }
 

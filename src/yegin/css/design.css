@@ -3,7 +3,7 @@
 }
 
 .label {
-	-fx-font-size: 25px;
+	-fx-font-size: 20px;
 	-fx-font-weight: bold;
 	-fx-text-fill: #333333;
 	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
@@ -30,3 +30,29 @@
 	-fx-fill: #818181;
 	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
 }
+
+#ice{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/newcold.jpg");
+	-fx-text-fill: red;
+}
+#btnMemo{
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/memo.jpg");
+	-fx-text-fill: blue;
+}
+#cold{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/cold.jpg");
+	-fx-text-fill: red;
+}
+#btnTemp{
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/ondo.png");
+	-fx-text-fill: blue;
+}
+
