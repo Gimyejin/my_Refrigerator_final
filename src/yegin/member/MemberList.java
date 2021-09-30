@@ -30,11 +30,13 @@ public class MemberList {
 	ObservableList<String> listCount;
 	ListView<String> lv;
 	ListView<String> count;
-	Label id, name;
+	Label id,name;
+
 	ShelfLife_Method sm;
 	MemberDTO dto;
 	HyDB hb;
 	teamproject tp;
+
 	Design design;
 
 	public void setRoot(Parent root) {
@@ -43,9 +45,12 @@ public class MemberList {
 
 	public void setRoot2(Parent newRoot) {
 		this.newRoot = newRoot;
+
 		design = new Design();
 		design.item(newRoot);
+		
 		hb = new HyDB();
+
 		dto = new MemberDTO();
 		tp = new teamproject();
 		listView();
@@ -65,7 +70,7 @@ public class MemberList {
 		}
 		sc = new Scene(newRoot);
 		Stage stage = (Stage) root.getScene().getWindow();
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());// 화면 꾸미기 연결 코드
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design2.css").toString());// 화면 꾸미기 연결 코드
 
 		MemberList ml = loader.getController();
 		ml.setRoot2(newRoot);
@@ -75,6 +80,7 @@ public class MemberList {
 
 	public void listView() {
 		dto = tp.loginChk(LoginServiceImpl.staticid);
+
 		id = (Label) newRoot.lookup("#id");
 		name = (Label) newRoot.lookup("#name");
 		id.setText(dto.getId());
@@ -106,7 +112,7 @@ public class MemberList {
 
 	public void back() {
 		Method mt = new Method();
-		mt.mfc((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
+		mt.mfc3((Stage) newRoot.getScene().getWindow(), "/main/frozenStorage_function.fxml");
 
 		System.out.println("뒤로가기");
 	}

@@ -41,10 +41,9 @@ public class FoodListController implements Initializable{
    Button btnmod, btnrm;
    ComboBox<String> year, month, day;
    String shelfday;
-   int x; String seltime, selname, selcnt;
+   String seltime;
 
    public void setRoot(Parent root) {
-      System.out.println("깃실험1");
       this.root = root;
       fxNameView = (ListView)root.lookup("#fxNameView");
       fxcntView = (ListView)root.lookup("#fxcntView");
@@ -106,18 +105,17 @@ public class FoodListController implements Initializable{
          fxNameView.getSelectionModel().selectedIndexProperty().
          addListener((observable, oldValue, newValue)->{
          seltime= timeString.get((int)newValue);
-         selname= NameString.get((int)newValue);
-         selcnt= cntString.get((int)newValue);
          });   
          
    }
+   
    
    public void fxadd() { //추가기능
       
       TextArea food = (TextArea)root.lookup("#fxaddtext");
       ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set
       FoodDTO dto = new FoodDTO(); 
-      if(food==null) {
+      if(food.getText().isEmpty()) {
          Alert alt = new Alert(AlertType.INFORMATION);
          alt.setContentText("추가할 음식과 수량을 입력해주세요");
          alt.show(); return;
@@ -129,7 +127,6 @@ public class FoodListController implements Initializable{
       SimpleDateFormat s = new SimpleDateFormat("MM월 dd일 aa hh시 mm분 ss초"); //현재시간
       String str = s.format(date);
       dto.setFoodTime(str);
-      System.out.println(dto.getFoodName()+" "+dto.getFoodNum());
       int result = hb.insert(dto);
       if(result==1) {
          Label fxmsg = (Label)root.lookup("#fxmsg");
@@ -150,7 +147,6 @@ public class FoodListController implements Initializable{
       dtomod.setOldName(a.get(0));
       TextArea food = (TextArea)root.lookup("#fxaddtext");
       ComboBox<String> com = (ComboBox<String>)root.lookup("#fxcount"); //입력값 set   
-      System.out.println(dtomod.getFoodName()+" "+dtomod.getFoodNum());
       dtomod.setFoodName(food.getText());
       dtomod.setFoodNum(getComboBox());
       dtomod.setFoodTime(seltime);
@@ -171,7 +167,6 @@ public class FoodListController implements Initializable{
       FoodDTO dtorm = new FoodDTO(); 
       ObservableList<String> a = fxNameView.getSelectionModel().getSelectedItems();
       dtorm.setFoodName(a.get(0));
-      dtorm.setFoodNum(selcnt);
       dtorm.setFoodTime(seltime);
       int result = hb.remove(dtorm);
       if(result==1) {

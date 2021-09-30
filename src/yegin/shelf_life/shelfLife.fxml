@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0"
-   xmlns="http://javafx.com/javafx/8.0.171"
-   xmlns:fx="http://javafx.com/fxml/1"
-   fx:controller="yegin.shelf_life.shelfLifeController">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.shelf_life.shelfLifeController">
    <children>
-      <ListView fx:id="viewList" layoutX="55.0" layoutY="204.0"
-         prefHeight="272.0" prefWidth="115.0" />
-      <Label fx:id="list" layoutX="119.0" layoutY="59.0"
-         text="유통기한 목록">
-         <font>
-            <Font name="Arial Black" size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="219.0" layoutY="127.0" mnemonicParsing="false"
-         onAction="#chage" prefHeight="7.0" prefWidth="72.0" text="수정" />
-      <Button layoutX="306.0" layoutY="14.0" mnemonicParsing="false"
-         onAction="#back" text="뒤로">
+      <ListView fx:id="viewList" layoutX="60.0" layoutY="208.0" prefHeight="272.0" prefWidth="115.0">
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="1.4" specularConstant="0.45" specularExponent="26.51" surfaceScale="1.51">
+               <light>
+                  <Light.Distant azimuth="196.74" color="#e1ebff" elevation="50.23" />
+               </light>
+            </Lighting>
+         </effect></ListView>
+      <Button layoutX="225.0" layoutY="123.0" mnemonicParsing="false" onAction="#chage" prefHeight="27.0" prefWidth="65.0" text="수정" />
+      <Button layoutX="306.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" text="뒤로">
          
       </Button>
-      <ListView fx:id="viewList1" layoutX="173.0" layoutY="204.0"
-         prefHeight="272.0" prefWidth="115.0" />
-      <Label layoutX="97.0" layoutY="179.0" text="품목" />
-      <Label layoutX="207.0" layoutY="179.0" text="유통기한" />
+      <ListView fx:id="viewList1" layoutX="183.0" layoutY="208.0" prefHeight="272.0" prefWidth="115.0">
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="1.44">
+               <light>
+                  <Light.Distant azimuth="221.86" color="#e5ebff" />
+               </light>
+            </Lighting>
+         </effect></ListView>
+    <!--   <Label layoutX="184.0" layoutY="174.0" text="유통기한" /> -->
+      <ImageView fx:id="log3" fitHeight="113.0" fitWidth="226.0" layoutX="66.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="date" fitHeight="43.0" fitWidth="65.0" layoutX="205.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="name" fitHeight="78.0" fitWidth="107.0" layoutX="60.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
 
    </children>
 </AnchorPane>
