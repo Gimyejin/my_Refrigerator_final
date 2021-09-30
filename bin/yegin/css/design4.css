@@ -1,0 +1,70 @@
+.root {
+	-fx-background-image: url("../resources/background3.png");
+}
+#itemName{
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #007bff;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+.button {
+	-fx-border-radius: 4px;
+	-fx-background-radius: 4px;
+	-fx-background-color: #007bff;
+	-fx-text-fill: #fff;
+	-fx-border-color: #007bff;
+	-fx-padding: 5px 5px;
+}
+#fxdel{
+		-fx-font-family:"HCR Dotum";
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #007bff;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+
+.button:hover {
+	-fx-background-color: #0069d9;
+	-fx-border-color: #0062cc;
+}
+
+
+#list {
+	-fx-font-size: 32px;
+	
+	-fx-fill: #818181;
+	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#ice{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/newcold.jpg");
+	-fx-text-fill: red;
+}
+#btnMemo{
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-border-radius: 10.0px;
+	-fx-text-fill: #000000;
+	-fx-border-color: #007bff;
+	-fx-padding: 5.0px 5.0px;
+	-fx-background-image: url("../resources/memo.png");
+}
+#cold{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/cold.jpg");
+	-fx-text-fill: red;
+}
+#btnTemp{
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/ondo.png");
+	-fx-text-fill: blue;
+}
+
