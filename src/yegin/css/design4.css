@@ -1,0 +1,53 @@
+.root {
+	-fx-background-image: url("../resources/background3.png");
+}
+#itemName{
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #007bff;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+.button {
+	-fx-border-radius: 4px;
+	-fx-background-radius: 4px;
+	-fx-background-color: #007bff;
+	-fx-text-fill: #fff;
+	-fx-border-color: #007bff;
+	-fx-padding: 5px 5px;
+}
+#fxdel{
+		-fx-font-family:"HCR Dotum";
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #007bff;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+
+
+.label {
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #007bff;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+	-fx-background-repeat: no-repeat;
+}
+
+#ice{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/member.png");
+	-fx-text-fill: red;
+}
+
+#cold{
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-background-image: url("../resources/입고.png");
+	-fx-text-fill: red;
+}
+
+

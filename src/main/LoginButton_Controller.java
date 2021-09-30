@@ -26,7 +26,7 @@ public class LoginButton_Controller implements Initializable {
 
 	public void setRoot(Parent root) {
 		this.root = root;
-		System.out.println("로그인 컨트롤 버튼"+root);
+		System.out.println("로그인 컨트롤 버튼" + root);
 		/*
 		 * lp = new LoginProc(); mp = new MemberProc();
 		 */
@@ -70,14 +70,12 @@ public class LoginButton_Controller implements Initializable {
 		}
 
 		sc = new Scene(newRoot);
-		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());//화면 꾸미기 연결 코드
-		
-
-		// scene만 바꿔치기
+		sc.getStylesheets().add(getClass().getResource("/yegin/css/design.css").toString());
 		Stage stage = (Stage) root.getScene().getWindow();
 
 		MainFunction_Controller mc = loader.getController();
 		mc.setRoot(newRoot);
+		mc.setRoot5(newRoot);
 
 		stage.setScene(sc);
 		stage.show();

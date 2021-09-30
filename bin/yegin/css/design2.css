@@ -3,11 +3,32 @@
 }
 
 .label {
-	-fx-font-size: 25.0px;
-	-fx-font-weight: bold;
+	-fx-font-size: 15px;
+	-fx-font-family:"HCR Dotum";
 	-fx-text-fill: #333333;
 	-fx-effect: dropshadow(gaussian, rgba(255.0, 255.0, 255.0, 0.5), 0.0, 0.0, 0.0, 1.0);
 	-fx-background-repeat: no-repeat;
+}
+#fxchange{
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-border-radius: 10.0px;
+	-fx-text-fill: #000000;
+	-fx-border-color: #B388FF;
+	-fx-padding: 5.0px 5.0px;
+	-fx-background-image: url("../resources/수정용.png");
+	
+}
+#fxmember{
+	-fx-font-family:"HCR Dotum";
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-border-radius: 10.0px;
+	-fx-text-fill: #000000;
+	-fx-border-color: #007bff;
+	-fx-padding: 5.0px 5.0px;
+	-fx-background-image: url("../resources/리스트.png");
 }
 .button {
 	-fx-border-radius: 4.0px;

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../yegin/css/design4.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
-      <Button fx:id="ice" layoutX="68.0" layoutY="79.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="177.0" prefWidth="214.0" text="냉동" />
-      <Button fx:id="btnMemo" layoutX="220.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnMemo" prefHeight="63.0" prefWidth="92.0" text="메모" />
-      <Button fx:id="cold" layoutX="68.0" layoutY="310.0" mnemonicParsing="false" onAction="#cold_Storage" prefHeight="194.0" prefWidth="214.0" text="냉장" />
-      <Button fx:id="btnTemp" layoutX="216.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnTemp" prefHeight="53.0" prefWidth="100.0" text="온도" />
+      <Button fx:id="ice" layoutX="81.0" layoutY="63.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="105.0" prefWidth="201.0" stylesheets="@../yegin/css/design4.css" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" text="로그아웃" />
+      <ImageView fx:id="fxmemo" fitHeight="90.0" fitWidth="100.0" layoutX="225.0" layoutY="107.0" onMouseClicked="#btnMemo" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="temp" fitHeight="79.0" fitWidth="157.0" layoutX="133.0" layoutY="216.0" onMouseClicked="#btnTemp" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="133.0" layoutY="168.0" text="회 원 관 리" />
+      <ImageView fx:id="add" fitHeight="161.0" fitWidth="215.0" layoutX="68.0" layoutY="295.0" onMouseClicked="#cold_Storage" pickOnBounds="true" preserveRatio="true" />
       
    </children>
 </AnchorPane>
