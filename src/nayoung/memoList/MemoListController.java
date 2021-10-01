@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 //import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.TextFlow;
 //import nayoung.memo.Memo;
 import nayoung.memoListDB.SL_DB;
@@ -37,11 +39,18 @@ public class MemoListController implements Initializable {
    Parent root;
    MemoList ml;
    PreparedStatement pstmt;
+//   ImageView fxImageView;
 
    public void setRoot(Parent root) {
       this.root = root;
       ml.setRoot(root);
+//      fxImageView = (ImageView)root.lookup("#fxImageView");
    }
+   
+//   public void setImageView() {
+//	   
+//	   fxImageView.setImage("shoppinglist.png");
+//   }
 
    public void memoProc() {
       System.out.println("장보기 메모 클릭");

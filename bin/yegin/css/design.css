@@ -3,11 +3,10 @@
 }
 
 .label {
-	-fx-font-size: 20px;
-	-fx-font-weight: bold;
-	-fx-text-fill: #333333;
-	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
-	-fx-background-repeat: no-repeat;
+	
+}
+#btnLogout.button {
+	-fx-text-fill: #fff;
 }
 .button {
 	-fx-border-radius: 4px;
@@ -32,27 +31,23 @@
 }
 
 #ice{
-	-fx-font-size: 20px;
-	-fx-font-weight: bold;
+	-fx-text-fill: #000000;
 	-fx-background-image: url("../resources/newcold.jpg");
-	-fx-text-fill: red;
+	
 }
 #btnMemo{
-	-fx-font-size: 16px;
-	-fx-font-weight: bold;
+	-fx-text-fill: #000000;
 	-fx-background-image: url("../resources/memo.jpg");
-	-fx-text-fill: blue;
+	
 }
 #cold{
-	-fx-font-size: 20px;
-	-fx-font-weight: bold;
+	-fx-text-fill: #000000;
 	-fx-background-image: url("../resources/cold.jpg");
-	-fx-text-fill: red;
+	
 }
 #btnTemp{
-	-fx-font-size: 16px;
-	-fx-font-weight: bold;
+	-fx-text-fill: #000000;
 	-fx-background-image: url("../resources/ondo.png");
-	-fx-text-fill: blue;
+	
 }
 

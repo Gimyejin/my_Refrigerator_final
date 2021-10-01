@@ -9,23 +9,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="219.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@../css/design3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberDel">
+<AnchorPane prefHeight="219.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@../css/design3.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yegin.member.MemberDel">
    <children>
       <HBox layoutX="16.0" layoutY="37.0" prefHeight="149.0" prefWidth="269.0" style="-fx-border-radius: 10px; -fx-border-color: #4FC3F7; -fx-border-width: 3px;" />
       <HBox layoutX="43.0" layoutY="8.0" prefHeight="66.0" prefWidth="216.0" style="-fx-background-color: #fff;" />
-      <Button layoutX="94.0" layoutY="173.0" mnemonicParsing="false" onAction="#memberdel" prefHeight="27.0" prefWidth="43.0" text="탈퇴" />
-      <Button layoutX="166.0" layoutY="171.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="43.0" text="취소" />
-      <Label fx:id="fxdel" layoutX="73.0" layoutY="24.0" prefHeight="42.0" prefWidth="156.0" text="회 원  탈 퇴" />
+      <Button layoutX="94.0" layoutY="173.0" mnemonicParsing="false" onAction="#memberdel" prefHeight="27.0" prefWidth="43.0" text="탈퇴">
+         <font>
+            <Font name="HCR Dotum Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="166.0" layoutY="173.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="43.0" text="취소">
+         <font>
+            <Font name="HCR Dotum Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="fxdel" layoutX="73.0" layoutY="24.0" prefHeight="42.0" prefWidth="156.0" text="회 원  탈 퇴">
+         <font>
+            <Font name="HCR Dotum" size="12.0" />
+         </font></Label>
       <TextField fx:id="pw1" layoutX="113.0" layoutY="88.0" />
       <PasswordField fx:id="pw2" layoutX="113.0" layoutY="124.0" />
       <Text layoutX="25.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비 밀 번 호">
          <font>
-            <Font name="HYGothic-Medium" size="15.0" />
+            <Font name="HCR Dotum" size="15.0" />
          </font>
       </Text>
       <Text layoutX="25.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비 밀 번 호 확 인" textAlignment="CENTER" wrappingWidth="74.98535066843033">
          <font>
-            <Font name="HYGothic-Medium" size="15.0" />
+            <Font name="HCR Dotum" size="15.0" />
          </font>
       </Text>
    </children>

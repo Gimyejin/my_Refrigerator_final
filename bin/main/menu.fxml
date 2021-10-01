@@ -4,15 +4,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../yegin/css/design4.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
+<AnchorPane prefHeight="550.0" prefWidth="350.0" stylesheets="@../yegin/css/design4.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainFunction_Controller">
    <children>
       <Button fx:id="ice" layoutX="81.0" layoutY="63.0" mnemonicParsing="false" onAction="#frozen_Storage" prefHeight="105.0" prefWidth="201.0" stylesheets="@../yegin/css/design4.css" />
-      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" text="로그아웃" />
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" text="로그아웃">
+         <font>
+            <Font name="HCR Dotum Bold" size="12.0" />
+         </font></Button>
       <ImageView fx:id="fxmemo" fitHeight="90.0" fitWidth="100.0" layoutX="225.0" layoutY="107.0" onMouseClicked="#btnMemo" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="temp" fitHeight="79.0" fitWidth="157.0" layoutX="133.0" layoutY="216.0" onMouseClicked="#btnTemp" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="133.0" layoutY="168.0" text="회 원 관 리" />
-      <ImageView fx:id="add" fitHeight="161.0" fitWidth="215.0" layoutX="68.0" layoutY="295.0" onMouseClicked="#cold_Storage" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="temp" fitHeight="79.0" fitWidth="145.0" layoutX="52.0" layoutY="216.0" onMouseClicked="#btnTemp" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="177.0" layoutY="70.0" text="회 원 관 리">
+         <font>
+            <Font name="HYHeadLine-Medium" size="12.0" />
+         </font></Label>
+      <ImageView fx:id="add" fitHeight="207.0" fitWidth="230.0" layoutX="62.0" layoutY="270.0" onMouseClicked="#cold_Storage" pickOnBounds="true" preserveRatio="true" />
       
    </children>
 </AnchorPane>
