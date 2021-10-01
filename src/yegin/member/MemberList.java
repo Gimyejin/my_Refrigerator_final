@@ -90,8 +90,8 @@ public class MemberList {
       count = (ListView) newRoot.lookup("#count");
       list = FXCollections.observableArrayList();
       listCount = FXCollections.observableArrayList();
-      // list.add("내 냉장고 음식");
-      ArrayList<FoodDTO> foodList = hb.DbValue();// db 다 들어옴.
+      
+      ArrayList<FoodDTO> foodList = hb.DbValue();
 
       if (foodList != null) {
          for (int i = 0; i < foodList.size(); i++) {
