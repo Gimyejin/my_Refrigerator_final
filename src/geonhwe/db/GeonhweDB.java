@@ -10,7 +10,7 @@ public class GeonhweDB {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@210.221.253.215:1521:xe", "team1", "1234");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "java", "java");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

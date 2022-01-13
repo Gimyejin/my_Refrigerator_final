@@ -16,14 +16,15 @@ public class SL_DB {
 			
 		}
 		
-		String connectionString = "jdbc:oracle:thin:@210.221.253.215:1521:xe";
+		//String connectionString = "jdbc:oracle:thin:@210.221.253.215:1521:xe";
+		String connectionString = "jdbc:oracle:thin:@localhost:1521:xe";
 //			+ "?useUnicode=true"
 //			+ "&characterEncoding=utf8"
 //			+ "&useSSL=false"
 //			+ "&serverTimezone=Asia/Seoul";
 		
-		String userId = "team1";
-		String password = "1234";
+		String userId = "java";
+		String password = "java";
 		
 		//Connection conn = null;
 		try {

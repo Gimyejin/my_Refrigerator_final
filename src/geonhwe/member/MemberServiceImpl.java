@@ -47,8 +47,12 @@ public class MemberServiceImpl implements MemberService{
       MemberDTO ggdto = tpj.loginChk(id.getId());
       
       if(result == 0) { 
-      //alertMethod("회원가입 불가능!");
-      alertMethod("이미 가입된 아이디입니다.");
+    	  System.out.println(tpj.loginChk(id.getText())+"확인용");
+    	  if(tpj.loginChk(id.getText())!=null) {
+    		  alertMethod("이미 가입된 아이디입니다.");
+    	  }else {
+    		  alertMethod("회원가입이 실패하였습니다.");
+    	  }
       }else if(result == 1) {
          System.out.println("회원가입 가능!");
         // if(ggdto.getId().equals(id.getId())) {
@@ -65,7 +69,7 @@ public class MemberServiceImpl implements MemberService{
 
       }
       
-      System.out.println(dto.getId()); // set = 넣다 get = 꺼내다
+      System.out.println("아이디"+dto.getId()); // set = 넣다 get = 꺼내다
       System.out.println(dto.getName());
       System.out.println(dto.getPwd());
    }
