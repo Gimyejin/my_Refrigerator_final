@@ -90,11 +90,11 @@ public class MemoListController implements Initializable {
          AppUtil.alert("DB연결에 실패했습니다.", null);
          return;
       }
-
+      System.out.println("불러오기 전");
       Statement stmt = null;
       ResultSet rs = null;
       String sql = "SELECT * FROM SHOPPINGLIST where id=?";
-
+      System.out.println("now id: "+LoginServiceImpl.staticid);
       try {
          pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
          // stmt = conn.createStatement();
@@ -202,6 +202,7 @@ public class MemoListController implements Initializable {
 	      }
 
       int idx = list.getSelectionModel().getSelectedIndex();
+      System.out.println("index: "+idx);
       ShoppingList dto = sp_alist.get(idx);
   
       if (idx >= 0) {
